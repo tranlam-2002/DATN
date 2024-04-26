@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductRequest;
 use Illuminate\Http\Request;
-use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductAdminService;
+use App\Models\Product;
+
 class ProductsController extends Controller
 {
     /**
@@ -20,7 +21,10 @@ class ProductsController extends Controller
      
     public function index()
     {
-        
+        return view("admin.product.list", [
+            'title'=> 'Danh Sách Sản Phẩm',
+            'products'=> $this->productService->get()
+        ]);
     }
 
     /**
@@ -39,15 +43,20 @@ class ProductsController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $this->productService->insert($request);
+        $this->productService->create($request);
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Product $product)
     {
-        //
+        return view('admin.product.edit', [
+            'title' => 'Chỉnh Sửa Sản Phẩm',
+            'product' => $product,
+            'menus' => $this->productService->getMenu(),
+        ]);
     }
 
     /**
@@ -61,16 +70,27 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $this->productService->update($request, $product);
+        if($request){
+            return redirect('/admin/products/list');
+        }
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+        $result= $this->productService->delete($request);
+        if($result){
+            return response()->json([
+                'error' => false,
+                'massage' => 'Xóa thành công sản phẩm'
+            ]);
+        }
+        return response()->json(['error' => true]);
     }
 }

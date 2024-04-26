@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Product;
+namespace App\Http\Requests\Slider;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductRequest extends FormRequest
+class SliderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,16 +22,16 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'price'=> 'required',
-            'thumb' => 'required'
+            'name'=>'required',
+            'thumb'=> 'required',
+            'url'=> 'required',
         ];
     }
     public function messages(){
         return [
-            'name.required' => 'Vui lòng nhập tên sản phẩm',
-            'price.required'=> 'Vui lòng nhập giá sản phẩm',
-            'thumb.required' => 'Ảnh đại diện không được trống'
+            'name.required'=> 'Vui lòng nhập tên slider',
+            'thumb.required'=> 'Vui lòng nhập ảnh slider',
+            'url.required'=> 'Vui lòng điền đường dẫn',
         ];
     }
 }

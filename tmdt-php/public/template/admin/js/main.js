@@ -5,7 +5,7 @@ $.ajaxSetup({
 });
 
 function removeRow(id, url){
-    if (confirm('Bạn có chắc chắn muốn xóa danh mục này không ??')){
+    if (confirm('Bạn có chắc chắn muốn xóa mục này không ??')){
         $.ajax({
             type: "DELETE",
             datatype: "JSON",
@@ -46,7 +46,7 @@ $('#upload').change(function(){
             '<img src ="' + results.url + '" width="100px"></a>'
             
             );
-                $('#file').val(results.url);   
+                $("#thumb").val(results.url);   
             }
             else{
                 alert('Upload File Lỗi');

@@ -9,20 +9,14 @@
                   <div class="col-md-6">
                     <div class="form-group">
                     <label>Tên Sản Phẩm </label>
-                    <input type="text" name ="name" class="form-control" placeholder="Nhập tên sản phẩm">
+                    <input type="text" name ="name" value="{{old('name')}}" class="form-control" placeholder="Nhập tên sản phẩm">
                   </div>
-
-                    <div class="form-group">
-                    <label for="menu">Giá Gốc</label>
-                    <input type="number" name="price" class="form-control">
-                    </div>
                   </div>
-
 
                   <div class="col-md-6">
                     <div class="form-group">
                     <label>Danh Mục</label>
-                     <select class="form-control" name="parent_id">
+                     <select class="form-control" name="menu_id" value="{{old('menu_id')}}">
                       <option value="0"> Danh Mục Cha</option>
                       <option value="1"> Điện thoại</option>
                       <option value="2"> Máy tính bảng</option>
@@ -35,21 +29,31 @@
                       @endforeach //để truy vấn ID xem có trùng với danh mục cha ko
                     </select>
                     </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                    <label for="menu">Giá Gốc</label>
+                    <input type="number" name="price" value="{{old('price')}}" class="form-control">
+                    </div>
+
+                  </div>
+                  
+                  <div class="col-md-6">
                    <div class="form-group">
                     <label for="menu">Giá Giảm</label>
-                    <input type="number" name="price_sale" class="form-control">
+                    <input type="number" name="price_sale" value="{{old('price_sale')}}" class="form-control">
                     </div>
                     </div>
                   </div>
-                  
 
                   <div class="form-group">
                     <label>Mô Tả</label>
-                    <textarea name ="description" class="form-control" placeholder="Enter ..." style="text-align: start;"></textarea>
+                    <textarea name ="description" class="form-control" placeholder="Enter ..." style="text-align: start;">{{old('description')}}</textarea>
                   </div>
                  <div class="form-group" >
                     <label>Mô Tả Chi Tiết</label>
-                    <textarea id = "content" class="form-control" name ="content" rows="3" placeholder="Enter ..." style="text-align: start;">Enter ...</textarea>
+                    <textarea id = "content" class="form-control" name ="content" rows="3" placeholder="Enter ..." style="text-align: start;">{{old('content')}}</textarea>
                   </div>
                    <div class="form-group">
                     <!-- <label for="customFile">Custom File</label> -->
@@ -59,7 +63,7 @@
 
                     
                   </div>
-                  <input type="hidden" name="file" id="file">
+                  <input type="hidden" name="thumb" id="thumb">
                   </div>
 
                     <div class="form-group">

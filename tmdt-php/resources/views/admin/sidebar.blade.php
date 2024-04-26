@@ -84,19 +84,37 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/products/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Sản Phẩm</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          {{-- Slider --}}
+               <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-images"></i>
+              <p>
+                Slider
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
+                <a href="/admin/sliders/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Quản Lý Sản Phẩm</p>
+                  <p>Thêm Slider </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/sliders/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Slider</p>
                 </a>
               </li>
             </ul>
-          </li>
+          </li>      
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
