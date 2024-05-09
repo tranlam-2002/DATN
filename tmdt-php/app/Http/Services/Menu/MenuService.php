@@ -9,8 +9,14 @@ class MenuService{
     public function getPager(){
         return Menu::where('parent_id', 0)->get();
     }
+    public function show(){
+        return Menu::select('name', 'id')
+        ->where('parent_id', 0)
+        ->orderByDesc('id')
+        ->get();
+    }
      public function getAll(){
-        return Menu::orderBy('id')->paginate(20);
+        return Menu::orderByDesc('id')->paginate(20);
     }
     public function create($request){
         try{

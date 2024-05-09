@@ -5,10 +5,11 @@
   <thead>
     <tr>
       <th style="">ID</th>
-      <th>Tên Sản Phẩm</th>
+      <th style="width: 400px;">Tên Sản Phẩm</th>
       <th>Danh Mục</th>
       <th>Giá Gốc</th>
       <th>Giá Khuyến Mại</th>
+      <th>Ảnh SP</th>
       <th>Active</th>
       <th>Update</th>
       <th >&nbsp;</th>
@@ -22,6 +23,11 @@
                 <td>{{$product->menu_id}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->price_sale}}</td>
+                <td>
+                      <a href="{{$product->thumb}}" target="_blank">
+                      <img src="{{$product->thumb}}" height="40px">
+                  </a>
+                </td>
                 <td>{!! \App\Helpers\Helper::active($product->active) !!}</td>
                 <td>{{$product->updated_at}}</td>
                 <td>
@@ -34,5 +40,9 @@
     @endforeach
   </tbody>
 </table>
-{!! $products->links() !!}
+
+<div class="card-footer clearfix">
+  {!! $products->links() !!}
+</div>
+
 @endsection

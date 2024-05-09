@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\SliderController;
@@ -64,3 +64,5 @@ Route::middleware(['auth'])->group(function (){
    
   
 });
+
+Route::get('/', [MainController::class,'index']);

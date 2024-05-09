@@ -22,6 +22,7 @@ class SliderServices{
     public function get(){
         return Slider::orderByDesc('id')->paginate(15);
     }
+
     public function update($request, $slider){
         try{
             $slider->fill($request->input());
@@ -45,5 +46,8 @@ class SliderServices{
         return true;
       }
       return false;
+    }    
+    public function show(){
+        return Slider::where('active', 1)->orderByDesc('sort_by')->get();
     }
 }

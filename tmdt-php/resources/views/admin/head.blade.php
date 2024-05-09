@@ -20,4 +20,8 @@
 
   @yield('head')
 
-  
+<style>
+  .hidden{
+    display: none;
+  }
+</style>
