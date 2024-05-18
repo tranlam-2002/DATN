@@ -1,5 +1,9 @@
 @extends('admin.main')
 
+@section('head')
+    <script src="/ckeditor/ckeditor.js"></script>
+@endsection
+
 @section('content')
     <form action="" method="POST">
                 <div class="card-body">
@@ -11,14 +15,8 @@
                     <label >Danh Mục</label>
                     <select class="form-control" name="parent_id">
                       <option value="0"> Danh Mục Cha</option>
-                      <option value="1"> Điện thoại</option>
-                      <option value="2"> Máy tính bảng</option>
-                      <option value="3"> Laptop </option>
-                      <option value="4"> Linh kiện máy tính</option>
-                      <option value="5"> Tai nghe</option>
-                      <option value="6"> Màn hình máy tính</option>
                       @foreach ($menus as $menu)
-                      <option value="{{$menu->id}}"> {{$menu->name}}</option>
+                        <option value="{{$menu->id}}"> {{$menu->name}}</option>
                       @endforeach //để truy vấn ID xem có trùng với danh mục cha ko
                     </select>
                   </div>
@@ -54,4 +52,10 @@
                 </div>
                 @csrf
               </form>
+@endsection
+
+@section('footer')
+    <script>
+        CKEDITOR.replace('content');
+    </script>
 @endsection

@@ -11,12 +11,6 @@
                     <label >Danh Mục</label>
                     <select class="form-control" name="parent_id">
                     <option value="0" {{$menu->parent_id == 0 ? 'selected' : ''}}>Danh Mục Cha</option>
-                      <option value="1" {{$menu->parent_id == 0 ? 'selected' : ''}}> Điện thoại</option>
-                      <option value="2" {{$menu->parent_id == 0 ? 'selected' : ''}}> Máy tính bảng</option>
-                      <option value="3" {{$menu->parent_id == 0 ? 'selected' : ''}}> Laptop </option>
-                      <option value="4" {{$menu->parent_id == 0 ? 'selected' : ''}}> Linh kiện máy tính</option>
-                      <option value="5" {{$menu->parent_id == 0 ? 'selected' : ''}}> Tai nghe</option>
-                      <option value="6" {{$menu->parent_id == 0 ? 'selected' : ''}}> Màn hình máy tính</option>
                       @foreach ($menus as $menuParent)
                       <option value="{{$menuParent->id}}"
                         {{$menu->parent_id == $menuParent->id ? 'selected' : ''}}> 

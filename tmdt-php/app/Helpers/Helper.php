@@ -53,7 +53,6 @@ class Helper{
                         $html .= '</ul>';
                     }
                     $html .='</li>';
-               
             }
         }
         return $html;
@@ -66,9 +65,29 @@ class Helper{
         }
         return false;
     }
-    public static function price($price = 0, $priceSale = 0){
-        if ($priceSale != 0) return $priceSale;
-        if ($price != 0) return $price;
-        return '<a href="/lien-he.html">Liên Hệ</a>';
+    public static function price($price = 0, $priceSale = 0) {
+        $currency = 'VND'; // Đơn vị tiền tệ
+
+        if ($priceSale != 0) {
+            $discount = $price - $priceSale;
+            $discountPercent = round(($discount / $price) * 100, 2); // Tính phần trăm giảm giá
+            
+
+            // Định dạng giá khuyến mại
+            $priceSaleFormatted = '<span class="price-sale" style="color: rgb(20, 53, 195);">' . number_format($discount) . " " . $currency . '</span>';
+            $priceSaleFormatted = '<b>' . $priceSaleFormatted . '</b>'; // In đậm giá gốc
+            
+            // Định dạng giá gốc với gạch ngang 
+            $priceOriginalFormatted = '<span class="price-original">' . number_format($price) . " " . $currency . '</span>';
+            $priceOriginalFormatted = '<del>' . $priceOriginalFormatted . '</del>'; // Gạch ngang giá gốc
+
+            // Hiển thị giá khuyến mại, giá gốc và phần trăm giảm giá trong cùng một dòng
+            return $priceSaleFormatted . ' <br> ' . $priceOriginalFormatted . ' (-' . $discountPercent . '%)';
+            
+        } else if ($price != 0) {
+            return number_format($price) . " " . $currency;
+        } else {
+            return '<a href="/lien-he.html">Liên Hệ</a>';
+        }
     }
 }

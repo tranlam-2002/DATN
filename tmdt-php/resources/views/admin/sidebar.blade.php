@@ -57,12 +57,6 @@
                   <p>Danh Sách Danh Mục</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Quản Lý Sản Phẩm</p>
-                </a>
-              </li>
             </ul>
           </li>
 
@@ -92,7 +86,7 @@
             </ul>
           </li>
           {{-- Slider --}}
-               <li class="nav-item">
+           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-images"></i>
               <p>
@@ -114,7 +108,25 @@
                 </a>
               </li>
             </ul>
-          </li>      
+          </li> 
+          {{-- Cart --}}
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+                Giỏ Hàng
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/customers" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Đơn Hàng</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

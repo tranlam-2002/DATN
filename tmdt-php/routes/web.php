@@ -5,12 +5,15 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductsController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\Users\LoginController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Models\Product;
 use App\Http\Controllers\Admin\UploadController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\Services\UploadService;
+use App\Http\View\Composers\MenuComposer;
 use App\Models\Slider;
 
 Route::get('/', function () {
@@ -60,9 +63,21 @@ Route::middleware(['auth'])->group(function (){
    });
    #upload
        Route::post('upload/services', [UploadController::class,'store']);
-   });
+   #Cart
+       Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+      });
    
   
 });
 
 Route::get('/', [MainController::class,'index']);
+Route::post('/services/load-product', [MainController::class,'loadProduct']); 
+
+Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
+Route::get('san-pham/{id}-{slug}.html', [ProductController::class,'index']);
+
+Route::post('add-cart', [CartController::class, 'index']);
+Route::get('carts', [CartController::class, 'show']);
+Route::post('update-cart', [CartController::class, 'update']);
+Route::get('carts/delete/{id}', [CartController::class, 'remove']);
+Route::post('carts', [CartController::class, 'addCart']);
