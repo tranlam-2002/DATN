@@ -16,4 +16,7 @@ class Customer extends Model
        'content' 
     ];
     
+    public function carts(){
+        return $this->hasMany(Cart::class, 'customer_id','id');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Services\CartService;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -17,5 +18,26 @@ class CartController extends Controller
            'title' => 'Danh Sách Đơn Đặt Hàng',
            'customers'=>$this->cart->getCustomer() 
         ]);
+    }
+    public function show(Customer $customer){
+        
+        
+        $carts = $this->cart->getProductForCart($customer);
+        
+        return view('admin.carts.detail',[
+           'title'=>'Chi tiết đơn hàng: ' .$customer->name,
+           'customer' => $customer,
+           'carts'=>$carts
+        ]);
+    }
+    public function destroy(Request $request){
+        $result = $this->cart->destroy($request);
+        if($result){
+            return response()->json([
+                'error'=> false,
+                'message'=> 'Xóa thành công đơn hàng'
+            ]);
+        }
+        return response()->json(['error' => true]);
     }
 }

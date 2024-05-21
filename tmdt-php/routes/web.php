@@ -65,6 +65,8 @@ Route::middleware(['auth'])->group(function (){
        Route::post('upload/services', [UploadController::class,'store']);
    #Cart
        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+       Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
+       Route::Delete('customers/destroy', [\App\Http\Controllers\Admin\CartController::class, 'destroy']);
       });
    
   
