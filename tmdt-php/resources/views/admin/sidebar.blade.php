@@ -14,7 +14,7 @@
           <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"> Quản Trị Viên</a>
+          <a href="#" class="d-block"> Quản Lý Cửa Hàng</a>
         </div>
       </div>
 
@@ -33,6 +33,24 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item">
+            <a href="#" class="nav-link">
+             
+              <i class="nav-icon fas fa-store"></i>
+              <p>
+                Thống Kê
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thống Kê Cửa Hàng</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
@@ -112,7 +130,7 @@
           {{-- Cart --}}
             <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-shopping-cart"></i>
+              <i class="nav-icon fas fa-cart-arrow-down"></i>
               <p>
                 Giỏ Hàng
                 <i class="right fas fa-angle-left"></i>
@@ -123,6 +141,62 @@
                 <a href="/admin/customers" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Đơn Hàng</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          {{-- Khuyến mại --}}
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-hand-holding-usd"></i>
+              <p>
+                Khuyến mại
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/customers" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách khuyến mại</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          {{-- Liên Hệ --}}
+                      <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Liên Hệ
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/customers" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Liên Hệ</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          {{-- Khách Hàng --}}
+                      <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Khách hàng
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/customers" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh Sách Khách Hàng</p>
                 </a>
               </li>
             </ul>

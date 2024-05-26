@@ -16,7 +16,7 @@ use App\Http\Controllers\Services\UploadService;
 use App\Http\View\Composers\MenuComposer;
 use App\Models\Slider;
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
    return view('welcome');
 });
 
@@ -75,7 +75,7 @@ Route::middleware(['auth'])->group(function (){
 Route::get('/', [MainController::class,'index']);
 Route::post('/services/load-product', [MainController::class,'loadProduct']); 
 
-Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
+Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']); 
 Route::get('san-pham/{id}-{slug}.html', [ProductController::class,'index']);
 
 Route::post('add-cart', [CartController::class, 'index']);

@@ -34,12 +34,7 @@
 						<ul class="main-menu">
 							<li class="active-menu"><a href="/">Trang Chủ</a>
 							
-						    <li class="danhmuc">
-								<a href="#">Danh Mục</a>
-							</li>
-							
-							</li>
-							{!! $menusHtml !!}
+								{!! $menusHtml !!}
 							<li>
 								<a href="contact.html">Liên Hệ</a>
 							</li>

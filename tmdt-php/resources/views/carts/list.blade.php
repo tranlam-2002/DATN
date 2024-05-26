@@ -1,32 +1,45 @@
 @extends('main')
 
 @section('content')
-    <form class="bg0 p-t-130 p-b-85" method="post">
+<div class="m-l-26 p-b-10">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="#" class="stext-109 cl8 hov-cl1 trans-04">
+				Home
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				Shoping Cart
+			</span>
+		</div>
+	</div>
+    <form class="bg0 p-t-20 p-b-85" method="post">
         @include('admin.alert')
 
         @if (count($products) != 0)
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+            
+                <div class="row m-l-10">
+                    <div class="col-lg-10 col-xl-8 m-lr-auto m-b-50">
                         <div class="m-l-25 m-r--38 m-lr-0-xl">
                             <div class="wrap-table-shopping-cart">
                                 @php $total = 0; @endphp
                                 <table class="table-shopping-cart">
                                     <tbody>
                                     <tr class="table_head">
-                                        <th class="column-1">Product</th>
+                                        <th class="column-1">Sản Phẩm</th>
                                         <th class="column-2"></th>
-                                        <th class="column-3">Price</th>
-                                        <th class="column-4">Quantity</th>
-                                        <th class="column-5">Total</th>
+                                        <th class="column-3">Giá Sản Phẩm</th>
+                                        <th class="column-4">Số Lượng</th>
+                                        <th class="column-5">Tổng Tiền</th>
                                         <th class="column-6">&nbsp;</th>
                                     </tr>
 
                                     @foreach($products as $key => $product)
                                         @php
-                                            $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
-                                            $priceEnd = $price * $carts[$product->id];
-                                            $total += $priceEnd;
+                                        $price = $product->price_sale != 0 ? $product->price_sale : $product->price;
+                                        $priceEnd = $price * $carts[$product->id];
+
+                                        $total += $priceEnd;
                                         @endphp
                                         <tr class="table_row">
                                             <td class="column-1">
@@ -51,7 +64,7 @@
                                                 </div>
                                             </td>
                                             <td class="column-5">{{ number_format($priceEnd, 0, '', '.') }}</td>
-                                            <td class="p-r-15">
+                                            <td class="column-6 p-r-15">
                                                 <a href="/carts/delete/{{ $product->id }}">Xóa</a>
                                             </td>
                                         </tr>
@@ -67,7 +80,7 @@
 
                                     <div
                                         class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-                                        Apply coupon
+                                        Mã giảm 
                                     </div>
                                 </div>
 
@@ -78,7 +91,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+                    <div class="col-sm-10 col-lg-7 col-xl-4 m-lr-auto m-b-50">
                         <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
                             <h4 class="mtext-109 cl2 p-b-30">
                                 Cart Totals
@@ -137,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
     </form>
     @else
         <div class="text-center"><h2>Giỏ hàng trống</h2></div>
