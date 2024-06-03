@@ -1,34 +1,32 @@
 <!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
+		{{-- @php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp --}}
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Categories
+						Logo
 					</h4>
 
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
+								Trang Chủ
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
+								Danh Mục
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
+								Sản Phẩm
 							</a>
 						</li>
-
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
+								Liên Hệ
 							</a>
 						</li>
 					</ul>
@@ -36,31 +34,13 @@
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Help
+						Danh Mục 
 					</h4>
 
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
+								{{-- {!! $menusHtml !!} --}}
 							</a>
 						</li>
 					</ul>
@@ -68,42 +48,42 @@
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
+						Liên Hệ
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+						Có câu hỏi nào không? Hãy cho chúng tôi biết tại cửa hàng tại tầng 8, 379 Hudson St, New York, NY 10018 hoặc gọi cho chúng tôi theo số 0326 450 840 
 					</p>
 
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
+					<div class="p-t-20">
+						<a href="#" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fab fa-facebook-square" style="color: #0a65e3;"></i>
 						</a>
 
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
+						<a href="#" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fab fa-instagram" style="color: #d45f73;" ></i>
 						</a>
 
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
+						<a href="#" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fas fa-phone-square-alt" style="color: #63E6BE;"></i>
 						</a>
 					</div>
 				</div>
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
+						Thông Tin
 					</h4>
 
 					<form>
 						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email.com">
 							<div class="focus-input1 trans-04"></div>
 						</div>
 
 						<div class="p-t-18">
 							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
+								Đặt Mua
 							</button>
 						</div>
 					</form>
@@ -256,3 +236,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!--===============================================================================================-->
 	<script src="/template/js/main.js"></script>
 	<script src="/template/js/public.js"></script>
+	<script src="/template/js/script.js"></script>

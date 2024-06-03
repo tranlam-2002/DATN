@@ -12,7 +12,10 @@ use App\Http\Controllers\HomeController;
 use App\Models\Product;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Services\UploadService;
+use App\Http\Controllers\UserController;
 use App\Http\View\Composers\MenuComposer;
 use App\Models\Slider;
 
@@ -22,16 +25,16 @@ Route::get('/welcome', function () {
 
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::post('/services/load-product', [HomeController::class,'loadProduct']); 
 
-Route::get('/admin/users/login', [LoginController::class,'index'])->name('login');
-
-Route::post('/admin/users/login/store', [LoginController::class,'store']);
 
 Route::middleware(['auth'])->group(function (){
    
    Route::prefix('admin')->group(function(){
-      Route::get('/', [MainController::class,'index'])->name('admin');
-      Route::get('main', [MainController::class,'index']);
+      Route::get('/', [App\Http\Controllers\Admin\MainController::class,'index'])->name('admin');
+      Route::get('/users/login', [LoginController::class,'index'])->name('login');
+      Route::post('/users/login/store', [LoginController::class,'store']);
+      Route::get('main', [App\Http\Controllers\Admin\MainController::class,'index']);
 
    #menu
       Route::prefix('menus')->group(function(){
@@ -72,11 +75,24 @@ Route::middleware(['auth'])->group(function (){
   
 });
 
+Route::get('/login', [UserController::class,'login'])->name('login');
+Route::post('/login', [UserController::class,'postLogin'])->name('postLogin');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/register', [UserController::class,'register'])->name('register');
+Route::post('/register', [UserController::class,'postRegister'])->name('postRegister');
+Route::get('/forgot_password', [UserController::class,'forgot_password'])->name('forgot_password');
+Route::post('/forgot_password', [UserController::class,'postForgot_password'])->name('postForgot_password');
+// Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+  
 Route::get('/', [MainController::class,'index']);
 Route::post('/services/load-product', [MainController::class,'loadProduct']); 
 
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']); 
 Route::get('san-pham/{id}-{slug}.html', [ProductController::class,'index']);
+
+Route::get('/contact',[ContactController::class, 'contact'])->name('contact');;
 
 Route::post('add-cart', [CartController::class, 'index']);
 Route::get('carts', [CartController::class, 'show']);

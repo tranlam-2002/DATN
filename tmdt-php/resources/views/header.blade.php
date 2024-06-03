@@ -10,19 +10,13 @@
 							</div>
 
 							<div class="right-top-bar flex-w h-full">
-								<a href="#" class="flex-c-m trans-04 p-lr-25">
-									Đăng Nhập
-								</a>
-
-								<a href="#" class="flex-c-m trans-04 p-lr-25">
-									Đăng Ký
-								</a>
+								@include('fe.index')
 							</div>
 						</div>
 					</div>
 
 
-			<div class="wrap-menu-desktop">
+			<div class="wrap-menu-desktop how-shadow1">
 				<nav class="limiter-menu-desktop container">
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
@@ -36,7 +30,7 @@
 							
 								{!! $menusHtml !!}
 							<li>
-								<a href="contact.html">Liên Hệ</a>
+								<a href="{{ route('contact') }}">Liên Hệ</a>
 							</li>
 						</ul>
 					</div>	
@@ -96,14 +90,14 @@
 
 			<ul class="topbar-mobile">
 				<li>
+					<div class="left-top-bar">
+						Khuyến mại
+					</div>
+				</li>
+				<li>
+					
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Đăng nhập
-						</a>
-
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							Đăng ký
-						</a>
+						@include('fe.index')
 					</div>
 				</li>
 			</ul>

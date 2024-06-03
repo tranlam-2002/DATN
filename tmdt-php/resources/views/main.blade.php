@@ -11,6 +11,7 @@
 	<!-- Cart -->
     @include('cart')
     
+	
 	{{-- product details --}}
 	@yield('content')
 
