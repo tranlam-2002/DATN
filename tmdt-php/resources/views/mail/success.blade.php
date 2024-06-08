@@ -1,9 +1,5 @@
 <div>
-<h2>Chúc ngủ ngon cô gái nhỏ của anh! Đêm nay nhớ đắp chăn ấm và tắt đèn trước khi ngủ nhé, không lại cảm lạnh như上次đó!</h2>
-<br><h2>Em yêu ngủ ngon</h2>
-<br><h2>Anh yêu em nhiều ạ</h2>
-<br><h2>Yêu em nhiều lắm ạ </h2>
-<br><h2>Yêu em ạ </h2>
-<br><h2>yêu yêu yêu</h2>
-<br><h3>Anh Yêu Em </h3>
+    <h1>chúc mừng bạn đã đặt hàng thành công</h1>
+    <h2>đơn hàng chỉ mục đích xác nhận đơn hàng</h2>
+    <h2>khách hàng không cần phải trả lời</h2>
 </div>

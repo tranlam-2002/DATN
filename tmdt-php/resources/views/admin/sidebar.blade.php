@@ -176,7 +176,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/customers" class="nav-link">
+                <a href="/admin/contact" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Liên Hệ</p>
                 </a>
@@ -194,7 +194,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/customers" class="nav-link">
+                <a href="/admin/users" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Khách Hàng</p>
                 </a>

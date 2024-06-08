@@ -27,15 +27,12 @@ Route::get('/welcome', function () {
 Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::post('/services/load-product', [HomeController::class,'loadProduct']); 
 
-
-Route::middleware(['auth'])->group(function (){
-   
-   Route::prefix('admin')->group(function(){
-      Route::get('/', [App\Http\Controllers\Admin\MainController::class,'index'])->name('admin');
-      Route::get('/users/login', [LoginController::class,'index'])->name('login');
-      Route::post('/users/login/store', [LoginController::class,'store']);
-      Route::get('main', [App\Http\Controllers\Admin\MainController::class,'index']);
-
+Route::get('admin', [LoginController::class,'index'])->name('logon');
+Route::post('/logon/store', [LoginController::class,'store']);
+Route::post('/signout', [LoginController::class, 'signout'])->name('signout');
+     
+Route::prefix('admin')->middleware(['admin'])->group(function(){
+      Route::get('main', [App\Http\Controllers\Admin\MainController::class,'index'])->name('main');
    #menu
       Route::prefix('menus')->group(function(){
          Route::get('add', [MenuController::class, 'create']);
@@ -70,10 +67,17 @@ Route::middleware(['auth'])->group(function (){
        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
        Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
        Route::Delete('customers/destroy', [\App\Http\Controllers\Admin\CartController::class, 'destroy']);
-      });
+   #User khach hang   
+       Route::get('users', [\App\Http\Controllers\Admin\UserControllers::class, 'index']);
+      //  Route::get('users/view{users}', [\App\Http\Controllers\Admin\UserControllers::class::class, 'show']);
+       Route::Delete('users/destroy', [\App\Http\Controllers\Admin\UserControllers::class, 'destroy']);
+
+   // Route để quản lý thông tin liên hệ
+      Route::get('/contact', [\App\Http\Controllers\Admin\ContactController::class, 'index']);
+});
    
   
-});
+
 
 Route::get('/login', [UserController::class,'login'])->name('login');
 Route::post('/login', [UserController::class,'postLogin'])->name('postLogin');
@@ -82,8 +86,7 @@ Route::get('/register', [UserController::class,'register'])->name('register');
 Route::post('/register', [UserController::class,'postRegister'])->name('postRegister');
 Route::get('/forgot_password', [UserController::class,'forgot_password'])->name('forgot_password');
 Route::post('/forgot_password', [UserController::class,'postForgot_password'])->name('postForgot_password');
-// Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-// Route::post('reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
 
   
 Route::get('/', [MainController::class,'index']);
@@ -92,7 +95,8 @@ Route::post('/services/load-product', [MainController::class,'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']); 
 Route::get('san-pham/{id}-{slug}.html', [ProductController::class,'index']);
 
-Route::get('/contact',[ContactController::class, 'contact'])->name('contact');;
+Route::get('/contact',[ContactController::class, 'contact'])->name('contact');
+Route::post('/contact',[ContactController::class, 'postContact'])->name('postContact');
 
 Route::post('add-cart', [CartController::class, 'index']);
 Route::get('carts', [CartController::class, 'show']);

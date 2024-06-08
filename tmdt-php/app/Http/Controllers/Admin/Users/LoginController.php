@@ -36,9 +36,20 @@ class LoginController extends Controller
             $request->input('remember')
         ))
         {
-           return redirect()->route('admin')->with('success', 'Đăng nhập thành công!');
+           return redirect()->route('main')->with('success', 'Đăng nhập thành công!');
         }
             return redirect()->back()->with('error', 'Tên người dùng hoặc mật khẩu không đúng.');
+        }
+        // đăng xuất
+        public function signout(Request $request)
+        {
+            Auth::logout();
+
+            // Invalidate the session and regenerate CSRF token
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+
+            return redirect()->route('logon')->with('success', 'Bạn đã đăng xuất thành công!');
         }
 
 }
