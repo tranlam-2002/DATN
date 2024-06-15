@@ -10,9 +10,10 @@ use App\Models\Product;
 use App\Models\Customer;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Auth;
 class CartService
 {
     public function create($request)
@@ -79,6 +80,7 @@ class CartService
               return false;
             
             $customer = Customer::create([
+                'user_id' => Auth::id(),
                 'name'=>$request->input('name'),
                 'phone'=>$request->input('phone'),
                 'address'=>$request->input('address'),
@@ -90,8 +92,8 @@ class CartService
             Session::flash('success', 'Đặt Hàng Thành Công');
 
             #Queue
-            SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
-
+            //SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
+            SendMail::dispatch($customer, $carts)->delay(now()->addSeconds(2));
             Session::forget('carts');  
         }
         catch(\Exception $err){

@@ -13,15 +13,15 @@
             <div><img src="template/images/khuyenmai-4.webp" alt="Image 4"></div>
         </div>
         <!-- Nút mũi tên -->
-        <button class="slick-prev">&larr;</button>
-        <button class="slick-next">&rarr;</button>
+        <button class="slick-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slick-next"><i class="fas fa-chevron-right"></i></button>
     </div>
 </section>
 
 <!-- Title page -->
 <section class="">
       <h2 class="txt-center">
-        Liên Hệ
+      Liên Hệ
     </h2>  
 </section>
 

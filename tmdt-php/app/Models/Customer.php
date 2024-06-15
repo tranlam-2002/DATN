@@ -8,15 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-       'name',
-       'phone',
-       'address',
-       'email',
-       'content' 
+        'user_id', 'name', 'phone', 'address', 'email', 'content'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     
     public function carts(){
         return $this->hasMany(Cart::class, 'customer_id','id');
     }
+    
 }

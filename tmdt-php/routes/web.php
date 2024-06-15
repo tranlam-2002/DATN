@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductsController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Services\UploadService;
 use App\Http\Controllers\UserController;
 use App\Http\View\Composers\MenuComposer;
 use App\Models\Slider;
+use Monolog\Handler\RotatingFileHandler;
 
 Route::get('/welcome', function () {
    return view('welcome');
@@ -98,8 +100,25 @@ Route::get('san-pham/{id}-{slug}.html', [ProductController::class,'index']);
 Route::get('/contact',[ContactController::class, 'contact'])->name('contact');
 Route::post('/contact',[ContactController::class, 'postContact'])->name('postContact');
 
-Route::post('add-cart', [CartController::class, 'index']);
-Route::get('carts', [CartController::class, 'show']);
-Route::post('update-cart', [CartController::class, 'update']);
-Route::get('carts/delete/{id}', [CartController::class, 'remove']);
-Route::post('carts', [CartController::class, 'addCart']);
+
+
+//QLTK
+Route::group(['middleware' => ['auth']], function () {
+   // Route::get('/layouts',[AccountController::class,'user'])->name('layouts');
+   Route::get('/account', [AccountController::class, 'index'])->name('account.index');
+    Route::get('/account/edit', [AccountController::class, 'edit'])->name('account.edit');
+    Route::put('/account/update', [AccountController::class, 'update'])->name('account.update');
+    Route::get('/account/change-password', [AccountController::class, 'showChangePasswordForm'])->name('account.change-password');
+    Route::post('/account/change-password', [AccountController::class, 'changePassword'])->name('account.change-password');
+    Route::get('/account/orders', [AccountController::class, 'orders'])->name('account.orders');
+    Route::get('/orders/{id}', [AccountController::class, 'show'])->name('orders.show');
+    Route::delete('/orders/{id}', [AccountController::class, 'destroy'])->name('orders.destroy');
+
+    
+    // Customer
+    Route::post('add-cart', [CartController::class, 'index']);
+    Route::get('carts', [CartController::class, 'show']);
+    Route::post('update-cart', [CartController::class, 'update']);
+    Route::get('carts/delete/{id}', [CartController::class, 'remove']);
+    Route::post('carts', [CartController::class, 'addCart']);
+});
