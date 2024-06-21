@@ -24,7 +24,7 @@
                         <i class="fas fa-eye"></i>
                     </a>
                     <a href="#" class="btn btn-danger btn-sm"
-                       onclick="removeRow({{ $contact->id }}, '/admin/users/destroy')">
+                       onclick="removeRow({{ $contact->id }}, '/admin/contact/destroy')">
                         <i class="fas fa-trash"></i>
                     </a>
                  </td>

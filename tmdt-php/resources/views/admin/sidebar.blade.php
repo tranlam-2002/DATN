@@ -11,7 +11,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/template/admin/dist/img/avata2.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block"> Quản Lý Cửa Hàng</a>
@@ -44,7 +44,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/main" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thống Kê Cửa Hàng</p>
                 </a>
@@ -141,6 +141,12 @@
                 <a href="/admin/customers" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách Đơn Hàng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/customers/status" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Xử Lý Đơn Hàng</p>
                 </a>
               </li>
             </ul>

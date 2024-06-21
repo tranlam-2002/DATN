@@ -83,8 +83,8 @@ class Helper
         return false;
     }
 
-        public static function price($price = 0, $priceSale = 0) {
-    $currency = 'VND'; // Đơn vị tiền tệ
+    public static function price($price = 0, $priceSale = 0) {
+        $currency = 'VND'; // Đơn vị tiền tệ
 
     if ($priceSale != 0 ) {
             // Tính tỷ lệ phần trăm giảm giá

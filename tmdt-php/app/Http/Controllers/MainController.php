@@ -19,11 +19,20 @@ class MainController extends Controller
         $this->product = $product;
     }
     public function index(){
-        return view("home", [
+        $colors = [ 
+            '#3498db', // Màu Xanh Dương
+            '#2ecc71', // Màu Xanh Đậm
+            '#6c7ae0', //  Màu Xanh Dương Đậm
+            '#f1c40f', // Màu Vàng
+            '#e74c3c', // Màu Cảm Đỏ
+            '#e91e63', // Màu Hồng Đậm
+            ];
+        return view('home',[
             "title"=> "Shop Bán Đồ Điện Tử Thông Minh",
             "sliders"=> $this->slider->show(),
             "menus"=> $this->menu->show(),
             "products"=>$this-> product->get(),
+            'colors' => $colors,
         ]);
     }
     public function loadProduct(Request $request){

@@ -7,14 +7,26 @@
         @if($customers->isEmpty())
             <p>Bạn chưa có đơn hàng nào.</p>
         @else
+            @php
+                $statusTexts = [
+                    'pending' => 'Chờ duyệt',
+                    'approved' => 'Đã duyệt',
+                    'shipped' => 'Giao hàng',
+                ];
+                $deliveredTexts = [
+                    '0' => 'Đang chờ giao hàng',
+                    '1' => 'Giao hàng thành công'
+                ];
+            @endphp
+
             <table class="table">
-                
                 <thead>
                 <tr>
                     <th style="width: 100px">Mã ĐH</th>
                     <th>Tên Khách Hàng</th>
-                    <th>Số Điện Thoại</th>
-                    <th>Email</th>
+                    <th>Số Điện Thoại</th> 
+                    <th>Trạng Thái</th>
+                    <th>Giao Hàng</th>
                     <th>Ngày Đặt hàng</th>
                     <th style="width: 100px">&nbsp;</th>
                 </tr>
@@ -25,7 +37,8 @@
                         <td>{{ $customer->id }}</td>
                         <td>{{ $customer->name }}</td>
                         <td>{{ $customer->phone }}</td>
-                        <td>{{ $customer->email }}</td>
+                        <td>{{ $statusTexts[$customer->status] }}</td>
+                        <td>{{ $deliveredTexts[$customer->delivered] }}</td>
                         <td>{{ $customer->created_at }}</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="{{ route('orders.show', $customer->id) }}">
@@ -37,7 +50,6 @@
                             <form id="delete-form-{{ $customer->id }}" action="{{ route('orders.destroy', $customer->id) }}" method="POST" style="display: none;">
                                 @csrf
                                 @method('DELETE')
-                                
                             </form>
                         </td>
                     </tr>

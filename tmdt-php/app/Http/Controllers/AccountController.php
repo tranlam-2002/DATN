@@ -83,13 +83,13 @@ class AccountController extends Controller
 
         // Lấy danh sách đơn hàng của user hiện tại và phân trang
         $customers = Customer::where('user_id', $user->id)->paginate(10);
-
+        
         return view('account.orders', compact('customers'), [
                 'title'=>'Lịch Sử Đơn Hàng'
          ]);
     }
 
-    public function show($customerId)
+    public function show(Request $request, $customerId)
     {
         // Lấy thông tin khách hàng và chi tiết đơn hàng
         $customer = Customer::findOrFail($customerId);
@@ -98,9 +98,26 @@ class AccountController extends Controller
             ->get();
 
         return view('account.order_details', compact('customer', 'carts'), [
-                'title'=>'Lịch Sử Đơn Hàng'
-         ]);
+            'title' => 'Chi Tiết Đơn Hàng'
+        ]);
     }
+
+    public function showPut($customerId)
+    {
+        $customer = Customer::findOrFail($customerId);
+
+        // Kiểm tra nếu đơn hàng chưa được nhận và đang ở trạng thái 'shipped'
+        if ($customer->status === 'shipped' && !$customer->delivered) {
+            $customer->delivered = true;
+            $customer->save();
+
+            return redirect()->route('orders.show', $customerId)->with('success', 'Đơn hàng đã nhận thành công.');
+        }
+
+        // Nếu không phải trường hợp trên, redirect về trang chi tiết đơn hàng với thông báo lỗi
+        return redirect()->route('account.order_details', $customerId)->with('error', 'Không thể đánh dấu đơn hàng này là đã nhận được.');
+    }
+    
     public function destroy($id)
     {
         $customer = Customer::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
@@ -113,4 +130,5 @@ class AccountController extends Controller
 
         return redirect()->route('account.orders')->with('success', 'Đơn hàng đã được hủy.');
     }
+    
 }

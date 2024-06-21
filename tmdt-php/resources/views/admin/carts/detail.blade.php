@@ -2,12 +2,28 @@
 
 @section('content')
     <div class="customer mt-3">
+         @php
+                $statusTexts = [
+                    'pending' => 'Chờ duyệt',
+                    'approved' => 'Đã duyệt',
+                    'shipped' => 'Đã giao',
+                  ];
+            @endphp
         <ul>
             <li>Tên khách hàng: <strong>{{ $customer->name }}</strong></li>
             <li>Số điện thoại: <strong>{{ $customer->phone }}</strong></li>
             <li>Địa chỉ: <strong>{{ $customer->address }}</strong></li>
             <li>Email: <strong>{{ $customer->email }}</strong></li>
             <li>Ghi chú: <strong>{{ $customer->content }}</strong></li>
+            <li>Trạng thái:
+                    <strong style="color: rgb(90, 216, 90);">
+                        @if($customer->delivered)
+                            Giao hàng thành công
+                        @else
+                            {{ ucfirst($statusTexts[$customer->status]) }}
+                        @endif
+                    </strong>
+            </li>
         </ul>
     </div>
 

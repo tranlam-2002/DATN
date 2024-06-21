@@ -14,6 +14,7 @@
 	{{-- product details --}}
 	@yield('content')
 
+
 	<!-- Footer -->
     @include('footer')
 	

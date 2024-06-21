@@ -27,6 +27,7 @@ Route::get('/welcome', function () {
 
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/home/product', [HomeController::class, 'show']);
 Route::post('/services/load-product', [HomeController::class,'loadProduct']); 
 
 Route::get('admin', [LoginController::class,'index'])->name('logon');
@@ -35,6 +36,7 @@ Route::post('/signout', [LoginController::class, 'signout'])->name('signout');
      
 Route::prefix('admin')->middleware(['admin'])->group(function(){
       Route::get('main', [App\Http\Controllers\Admin\MainController::class,'index'])->name('main');
+      Route::get('dashboard', [App\Http\Controllers\Admin\MainController::class, 'index'])->name('dashboard');
    #menu
       Route::prefix('menus')->group(function(){
          Route::get('add', [MenuController::class, 'create']);
@@ -69,13 +71,18 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
        Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
        Route::Delete('customers/destroy', [\App\Http\Controllers\Admin\CartController::class, 'destroy']);
+       Route::get('customers/status', [\App\Http\Controllers\Admin\CartController::class, 'status'])->name('admin.carts.index');
+       Route::put('customers/{customerId}/updateStatus', [\App\Http\Controllers\Admin\CartController::class, 'updateStatus'])->name('admin.carts.updateStatus');
+   
    #User khach hang   
        Route::get('users', [\App\Http\Controllers\Admin\UserControllers::class, 'index']);
       //  Route::get('users/view{users}', [\App\Http\Controllers\Admin\UserControllers::class::class, 'show']);
        Route::Delete('users/destroy', [\App\Http\Controllers\Admin\UserControllers::class, 'destroy']);
 
    // Route để quản lý thông tin liên hệ
-      Route::get('/contact', [\App\Http\Controllers\Admin\ContactController::class, 'index']);
+      Route::get('contact/', [\App\Http\Controllers\Admin\ContactController::class, 'index']);
+      Route::DELETE('contact/destroy', [\App\Http\Controllers\Admin\ContactController::class, 'destroy']);
+
 });
    
   
@@ -111,8 +118,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/account/change-password', [AccountController::class, 'showChangePasswordForm'])->name('account.change-password');
     Route::post('/account/change-password', [AccountController::class, 'changePassword'])->name('account.change-password');
     Route::get('/account/orders', [AccountController::class, 'orders'])->name('account.orders');
-    Route::get('/orders/{id}', [AccountController::class, 'show'])->name('orders.show');
-    Route::delete('/orders/{id}', [AccountController::class, 'destroy'])->name('orders.destroy');
+    Route::get('/account/orders/{id}', [AccountController::class, 'show'])->name('orders.show');
+    Route::put('/account/orders/{customerId}/showPut', [AccountController::class, 'showPut'])->name('orders.showPut');
+    Route::delete('/account/orders/{id}', [AccountController::class, 'destroy'])->name('orders.destroy');
+    
 
     
     // Customer
