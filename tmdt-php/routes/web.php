@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProductsController;
+use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\ProductController;
@@ -14,10 +15,12 @@ use App\Models\Product;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PromotionsController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\Services\UploadService;
 use App\Http\Controllers\UserController;
 use App\Http\View\Composers\MenuComposer;
+use App\Models\Promotion;
 use App\Models\Slider;
 use Monolog\Handler\RotatingFileHandler;
 
@@ -28,6 +31,7 @@ Route::get('/welcome', function () {
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 Route::get('/home/product', [HomeController::class, 'show']);
+Route::get('/home/category', [HomeController::class, 'category'])->name('home.category');
 Route::post('/services/load-product', [HomeController::class,'loadProduct']); 
 
 Route::get('admin', [LoginController::class,'index'])->name('logon');
@@ -65,6 +69,13 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
          Route::post('edit/{slider}', [SliderController::class, 'update']);
          Route::DELETE('destroy', [SliderController::class, 'destroy']);
    });
+   #khuyenmai
+         Route::get('promotions', [App\Http\Controllers\Admin\PromotionController::class, 'create'])->name('admin.promotions.create');
+         Route::get('promotions/create', [App\Http\Controllers\Admin\PromotionController::class, 'index'])->name('admin.promotions.index');
+         Route::post('promotions', [App\Http\Controllers\Admin\PromotionController::class, 'store'])->name('admin.promotions.store');
+         Route::get('promotions/edit/{promotion}', [App\Http\Controllers\Admin\PromotionController::class, 'show']);
+         Route::post('promotions/edit/{promotion}', [App\Http\Controllers\Admin\PromotionController::class, 'update']);
+         Route::DELETE('promotions/destroy', [App\Http\Controllers\Admin\PromotionController::class, 'destroy']);
    #upload
        Route::post('upload/services', [UploadController::class,'store']);
    #Cart
@@ -82,7 +93,7 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
    // Route để quản lý thông tin liên hệ
       Route::get('contact/', [\App\Http\Controllers\Admin\ContactController::class, 'index']);
       Route::DELETE('contact/destroy', [\App\Http\Controllers\Admin\ContactController::class, 'destroy']);
-
+    
 });
    
   
@@ -107,7 +118,8 @@ Route::get('san-pham/{id}-{slug}.html', [ProductController::class,'index']);
 Route::get('/contact',[ContactController::class, 'contact'])->name('contact');
 Route::post('/contact',[ContactController::class, 'postContact'])->name('postContact');
 
-
+Route::get('/promotions', [PromotionsController::class, 'showPromotions']);
+Route::get('/promotions/{id}', [PromotionsController::class, 'show']);
 
 //QLTK
 Route::group(['middleware' => ['auth']], function () {

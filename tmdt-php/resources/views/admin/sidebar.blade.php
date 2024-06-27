@@ -163,7 +163,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/customers" class="nav-link">
+                <a href="{{ route('admin.promotions.create') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm khuyến mại</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.promotions.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh Sách khuyến mại</p>
                 </a>
@@ -172,7 +178,7 @@
           </li>
 
           {{-- Liên Hệ --}}
-                      <li class="nav-item">
+            <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-envelope"></i>
               <p>

@@ -71,7 +71,6 @@ class Helper
 
         return $html;
     }
-
     public static function isChild($menus, $id) : bool
     {
         foreach ($menus as $menu) {

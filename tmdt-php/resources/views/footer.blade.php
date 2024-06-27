@@ -1,6 +1,5 @@
 <!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
-		{{-- @php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp --}}
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
@@ -10,12 +9,12 @@
 
 					<ul>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="/" class="stext-107 cl7 hov-cl1 trans-04">
 								Trang Chủ
 							</a>
 						</li>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ route ('home.category') }}" class="stext-107 cl7 hov-cl1 trans-04">
 								Danh Mục
 							</a>
 						</li>
@@ -25,7 +24,7 @@
 							</a>
 						</li>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ route('contact') }}" class="stext-107 cl7 hov-cl1 trans-04">
 								Liên Hệ
 							</a>
 						</li>
@@ -40,7 +39,22 @@
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								{{-- {!! $menusHtml !!} --}}
+								Laptop
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								PC
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Di Động
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Linh Kiện
 							</a>
 						</li>
 					</ul>
@@ -52,22 +66,23 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Có câu hỏi nào không? Hãy cho chúng tôi biết tại cửa hàng tại tầng 8, 379 Hudson St, New York, NY 10018 hoặc gọi cho chúng tôi theo số 0326 450 840 
+						Có câu hỏi nào không? Hãy cho chúng tôi biết tại cửa hàng tại Số 185 Lĩnh Nam - Vĩnh Hưng - Hoàng Mại - Hà Nội hoặc gọi cho chúng tôi theo số 0326 450 840 
 					</p>
 
 					<div class="p-t-20">
-						<a href="#" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="https://www.facebook.com/vua.vua.965/" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fab fa-facebook-square" style="color: #0a65e3;"></i>
 						</a>
 
-						<a href="#" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fab fa-instagram" style="color: #d45f73;" ></i>
+						<a href="https://www.instagram.com/yourpage" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fab fa-instagram" style="color: #d45f73;"></i>
 						</a>
 
-						<a href="#" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="tel:0326450840" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fas fa-phone-square-alt" style="color: #63E6BE;"></i>
 						</a>
 					</div>
+
 				</div>
 
 				<div class="col-sm-6 col-lg-3 p-b-50">

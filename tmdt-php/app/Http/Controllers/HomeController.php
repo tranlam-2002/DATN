@@ -61,4 +61,21 @@ class HomeController extends Controller
             'title' => 'Danh sách sản phẩm'
         ]);
     }
+    
+    public function category()
+    {
+        $menus = Menu::with(['products', 'children.products'])->where('parent_id', 0)->get();
+          $firstMenu = $menus->first();
+          $colors = [
+            '#3498db', // Màu Xanh Dương
+            '#2ecc71', // Màu Xanh Đậm
+            '#6c7ae0', //  Màu Xanh Dương Đậm
+            '#f1c40f', // Màu Vàng
+            '#e74c3c', // Màu Cảm Đỏ
+            '#e91e63', // Màu Hồng Đậm
+            ]; 
+        return view('products.category', compact('menus','firstMenu', 'colors'), [
+            'title' => 'Danh sách sản phẩm'
+        ]);
+    }
 }

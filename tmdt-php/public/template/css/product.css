@@ -67,3 +67,133 @@
     padding-top: 14px;
     width: 250px; /* Độ rộng mặc định của sản phẩm */
 }
+
+/* thương hiệu */
+.brand-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.brand-item img {
+    max-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.brand-item:hover {
+  transform: scale(1.03);
+ }
+
+.brand-item:hover img {
+ transform: scale(1.05);
+}
+
+/* ảnh slide */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Bo góc tròn */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Chuyển đổi mượt */
+
+    /* Hiệu ứng nổi lên */
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(214, 214, 214, 0.799);
+}
+
+.image-container:hover {
+    transform: scale(1.03); /* Phóng to nhẹ thẻ chứa ảnh */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ lớn hơn khi di chuột vào */
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Màu nền nổi lên */
+    opacity: 0; /* Ban đầu là ẩn đi */
+    transition: opacity 0.3s ease; /* Hiệu ứng mượt khi thay đổi opacity */
+    border-radius: 10px; /* Bo góc tròn cho nền nổi lên */
+}
+
+.image-container:hover::before {
+    opacity: 1; /* Hiện lớp nền khi di chuột vào */
+}
+
+/* vận chuyển */
+.vanchuyen_cart {
+    background: #ededed;
+}
+.vanchuyen_thanhtoan_doitra {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border-top: 1px solid #1a4388;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding: 10px 50px;
+    padding-bottom: 8px;
+}
+.vanchuyen_thanhtoan_doitra .vanchuyen {
+    display: grid;
+    grid-template-columns: 17% auto;
+}
+.vanchuyen_thanhtoan_doitra .vanchuyen .content_vc_tt_dt h4 {
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+.content_vc_tt_dt p {
+    margin-bottom: 5px;
+}
+
+/* sản phẩm dành cho bạn */
+
+.product-card {
+    border: 1px solid #e0e0e0; /* Đường viền xám nhạt */
+    border-radius: 10px; /* Bo góc */
+    overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài viền */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Chuyển đổi mượt */
+    height: 400px; /* Chiều cao cố định cho khung sản phẩm */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Đảm bảo thông tin sản phẩm nằm phía dưới */
+}
+/* Đảm bảo kích thước ảnh giống nhau */
+.product-pic {
+    height: 200px; /* Chiều cao cố định cho phần ảnh */
+    overflow: hidden; /* Ẩn phần ảnh tràn ra ngoài */
+}
+.product-pic img {
+    width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng của thẻ chứa */
+    height: 100%; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh giữ tỉ lệ mà không bị méo */
+    transition: transform 0.3s ease; /* Chuyển đổi mượt khi phóng to ảnh */
+}
+.product-col {
+    padding: 0; /* Loại bỏ khoảng cách giữa các sản phẩm */
+    border-right: 1px solid #e0e0e0; /* Đường viền giữa các sản phẩm */
+}
+
+.product-col:last-child {
+    border-right: none; /* Loại bỏ đường viền ở sản phẩm cuối cùng */
+}
+.product-txt {
+    padding: 10px; /* Khoảng cách nội dung sản phẩm */
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #333;
+}

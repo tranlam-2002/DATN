@@ -25,7 +25,7 @@
 								
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
 								<a href="{{$slider->url}}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
+									Xem Thêm
 								</a>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 			</div>
 		</div>
 	</div> --}}
-	<div class="sec-banner bg0 p-t-80 p-b-50">
+	<div class="sec-banner bg0 p-t-80 p-b-30">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
@@ -97,7 +97,7 @@
 
 							<div class="block1-txt-child2 p-b-4 trans-05">
 								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
+									Xem thêm
 								</div>
 							</div>
 						</a>
@@ -127,14 +127,41 @@
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
-				<h3 class="ltext-103 cl5">
-					Tổng Quan Sản Phẩm
-				</h3>
+				<div class="image-container">
+					<img src="/template/images/AsusSlider.jpg" alt="Asus Slider">
+				</div>
 			</div>
 
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-
+             		<div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/acer.jpg" alt="Brand 1">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/Asus.jpg" alt="Brand 2">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/hp.jpg" alt="Brand 3">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/msi.jpg" alt="Brand 4">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/Lenovo.jpg" alt="Brand 5">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/Amdo.jpg" alt="Brand 6">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/samsung.jpg" alt="Brand 7">
+                            </div>
+                            <div class="col-md-3 col-sm-6 brand-item">
+                                <img src="/template/images/acer.jpg" alt="Brand 8">
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			
 				<!-- Search product -->
@@ -149,17 +176,62 @@
 				</div>
 			</div>
 			
-          {{-- DS san pham --}}
-		  <div id="loadProduct">
+          {{-- DS Danh mục san pham --}}
+		  <div id="">
 			@include('product')
 		  </div>
-			
+
+		{{-- slider vận chuyển --}}
+		<div class="vanchuyen_cart">
+			<div class="container">
+				<div class="vanchuyen_thanhtoan_doitra">
+				<div class="vanchuyen">
+					<div class="img_icon_footer">
+						<img src="/template/images/iconvanchuyen.png" alt="">
+					</div>
+					<div class="content_vc_tt_dt">
+						<h4>Vận chuyển và lắp đặt miễn phí</h4>
+						<p>Miễn phí vận chuyển 25km (*) </p>
+					</div>
+				</div>
+				<div class="vanchuyen">
+					<div class="img_icon_footer">
+						<img src="/template/images/iconthanhtoan.png" alt="">
+					</div>
+					<div class="content_vc_tt_dt">
+						<h4>Thanh toán dễ dàng</h4>
+						<p>Dễ dàng lựa chọn phương thức phù hợp</p>
+					</div>
+				</div>
+				<div class="vanchuyen">
+					<div class="img_icon_footer">
+						<img src="/template/images/iconDoitrahang.png" alt="">
+					</div>
+					<div class="content_vc_tt_dt">
+						<h4>Đổi và trả hàng</h4>
+						<p>Thời gian đỗi trả lên đến 30 ngày</p>
+					</div>
+				</div>
+       			</div>
+     		</div>
+    	</div>
+		  {{-- DS sản pham --}}
+			<div id="loadProduct">
+				<div class="p-b-30 p-t-30">
+					<h4 class="ltext-105 txt-center respon1" style="color: black; font-family: 'PhpDebugbarFontAwesome';">
+						CÁC SẢN PHẨM DÀNH CHO BẠN
+					</h4>
+				</div>
+				<div>
+					@include('products.list')
+				</div>
+			</div>
 
 			<!-- Load more -->
 			<div class="flex-c-m flex-w w-full p-t-45" id ="button-loadMore">
 				<input type="hidden" value="1" id="page">
 				<a onclick="loadMore()" class="btn flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
+					Xem thêm sản phẩm
 				</a>
 			</div>
 		</div>

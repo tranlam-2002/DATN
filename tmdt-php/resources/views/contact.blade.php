@@ -64,7 +64,7 @@
                         </span>
 
                         <p class="stext-115 cl6 size-213 p-t-18">
-                            Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+                             Số 185 Lĩnh Nam - Vĩnh Hưng - Hoàng Mại - Hà Nội 
                         </p>
                     </div>
                 </div>
