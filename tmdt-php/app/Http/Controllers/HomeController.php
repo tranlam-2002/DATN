@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Slider\SliderServices;
 use App\Http\Services\Product\ProductService;
+use App\Http\Services\Promotion\PromotionServices;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 class HomeController extends Controller
@@ -13,10 +14,12 @@ class HomeController extends Controller
     protected $slider;
     protected $menu;
     protected $product;
-    public function __construct(SliderServices $slider, MenuService $menu, ProductService $product){
+    protected $promotion;
+    public function __construct(SliderServices $slider, MenuService $menu, ProductService $product, PromotionServices $promotion){
         $this->slider = $slider;
         $this->menu = $menu;
         $this->product = $product;
+        $this->promotion = $promotion;
     }
     public function index(){
          $colors = [ 
@@ -32,6 +35,7 @@ class HomeController extends Controller
             "sliders"=> $this->slider->show(),
             "menus"=> $this->menu->show(),
             "products"=>$this-> product->get(),
+            "promotions"=>$this-> promotion->show(),
             'colors' => $colors,
         ]);
     }

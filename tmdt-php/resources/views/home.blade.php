@@ -36,92 +36,37 @@
 		</div>
 	</section>
 
-
-	<!-- Banner -->
-	{{-- <div class="sec-banner bg0 p-t-80 p-b-50">
+	<section class="sec-banner bg0 p-t-80 p-b-30">
 		<div class="container">
-			<div class="row">
-				@foreach($menus as $key => $menu)
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="/template/images/danhmuc/danh-muc.jpg" alt="IMG-BANNER">
-
-						<a href="/danhmuc/{{ $menu->id }}-{{Str::slug($menu->name, '-') }}.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									{{$menu->name}}
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Hot 2024
-								</span>
+			<div class="row position-relative">
+				<button class="arrow-slick2 prev-slick2 slick-arrow">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+				</button>
+				<button class="arrow-slick2 next-slick2 slick-arrow">
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+				</button>
+				<div class="promotion-container-wrapper" style="overflow: hidden;">
+					<div class="promotion-container d-flex">
+						@foreach($promotions as $promotion)
+						<div class="col-md-6 col-xl-4 p-b-30 promotion-item">
+							<!-- Block1 -->
+							<div class="wrap-pic-w" style="overflow: hidden; border-radius: 10px;">
+								<img src="{{ $promotion->thumb }}" alt="IMG-BANNER" style="width: 100%; border-radius: 10px;">
+								<a href="{{ url('/promotions/' . $promotion->id) }}" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+									<div class="block1-txt-child2 p-b-4 trans-05">
+										<div class="block1-link stext-101 cl0 trans-09">
+											Xem thêm
+										</div>
+									</div>
+								</a>
 							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-				@endforeach
-			</div>
-		</div>
-	</div> --}}
-	<div class="sec-banner bg0 p-t-80 p-b-30">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class=" wrap-pic-w">
-						<img src="/template/images/danhmuc/laptop.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class=" wrap-pic-w">
-						<img src="/template/images/danhmuc/PC.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Xem thêm
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class=" wrap-pic-w">
-						<img src="/template/images/danhmuc/LinkKien.jpg" alt="IMG-BANNER">
-
-						<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
+						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">

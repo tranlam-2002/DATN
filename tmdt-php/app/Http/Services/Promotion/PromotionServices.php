@@ -47,6 +47,6 @@ class PromotionServices{
       return false;
     }    
     public function show(){
-        return Promotion::where('active', 1)->orderByDesc('sort_by')->get();
+        return Promotion::where('active', 1)->get();
     }
 }
