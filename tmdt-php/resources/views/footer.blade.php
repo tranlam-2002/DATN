@@ -4,27 +4,28 @@
 			<div class="row">
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
-						Logo
+						<a href="/home" >
+							<img src="/template/images/logo-footer.png" alt="IMG-LOGO">
+						</a>
 					</h4>
-
 					<ul>
 						<li class="p-b-10">
-							<a href="/" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="/" class="stext-107 cl7 hov-cl1 trans-04 m-l-5">
 								Trang Chủ
 							</a>
 						</li>
 						<li class="p-b-10">
-							<a href="{{ route ('home.category') }}" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ route ('home.category') }}" class="stext-107 cl7 hov-cl1 trans-04 m-l-5">
 								Danh Mục
 							</a>
 						</li>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04 m-l-5">
 								Sản Phẩm
 							</a>
 						</li>
 						<li class="p-b-10">
-							<a href="{{ route('contact') }}" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ route('contact') }}" class="stext-107 cl7 hov-cl1 trans-04 m-l-5">
 								Liên Hệ
 							</a>
 						</li>
@@ -64,12 +65,48 @@
 					<h4 class="stext-301 cl0 p-b-30">
 						Liên Hệ
 					</h4>
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								<span style="margin-right: 5px;"><i class="fas fa-map-marker-alt"></i></span> 185 Minh Khai, Hoàng Mai, Hà Nội
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="mailto:tranlam2782002@gmail.com" class="stext-107 cl7 hov-cl1 trans-04">
+								<span style="margin-right: 5px;"><i class="fas fa-envelope"></i></span> tranlam2782002@gmail.com
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="tel:+84326450840" class="stext-107 cl7 hov-cl1 trans-04">
+								<span style="margin-right: 5px;"><i class="fas fa-phone"></i></span> (+84) 326 450 840
+							</a>
+						</li>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								<span style="margin-right: 5px;"><i class="fas fa-clock"></i></span> Giờ mở cửa: 8:00 sáng - 6:00 chiều
+							</a>
+						</li>
+					</ul>
+				</div>
 
-					<p class="stext-107 cl7 size-201">
-						Có câu hỏi nào không? Hãy cho chúng tôi biết tại cửa hàng tại Số 185 Lĩnh Nam - Vĩnh Hưng - Hoàng Mại - Hà Nội hoặc gọi cho chúng tôi theo số 0326 450 840 
-					</p>
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Thông Tin
+					</h4>
 
-					<div class="p-t-20">
+					<form action="{{ route('contact') }}">
+						<div class="wrap-input1 w-full p-b-4">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="Thông tin liên hệ .....">
+							<div class="focus-input1 trans-04"></div>
+						</div>
+
+						<div class="p-t-18">
+							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15">
+								Đặt Mua
+							</button>
+						</div>
+					</form>
+					<div class="p-t-10 p-l-5">
 						<a href="https://www.facebook.com/vua.vua.965/" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fab fa-facebook-square" style="color: #0a65e3;"></i>
 						</a>
@@ -82,35 +119,18 @@
 							<i class="fas fa-phone-square-alt" style="color: #63E6BE;"></i>
 						</a>
 					</div>
-
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Thông Tin
-					</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email.com">
-							<div class="focus-input1 trans-04"></div>
-						</div>
-
-						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Đặt Mua
-							</button>
-						</div>
-					</form>
 				</div>
 			</div>
 
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1">
-						<img src="/template/images/icons/icon-pay-01.png" alt="ICON-PAY">
+					
+					<a href="#" class="m-all-1" style="display: inline-block;">
+						<img src="/template/images/icons/icon-pay-07.png" alt="ICON-PAY" style="width: 25px; height: auto; object-fit: contain;">
 					</a>
-
+					<a href="#" class="m-all-1" style="display: inline-block;">
+						<img src="/template/images/icons/icon-logo-vnpay.png" alt="ICON-PAY" style="width: 34px; height: auto; object-fit: contain; border-radius: 3px;">
+					</a>
 					<a href="#" class="m-all-1">
 						<img src="/template/images/icons/icon-pay-02.png" alt="ICON-PAY">
 					</a>
@@ -130,7 +150,7 @@
 
 				<p class="stext-107 cl6 txt-center">
 				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+				Bản quyền &copy;<script>document.write(new Date().getFullYear());</script> Bảo lưu mọi quyền lợi | Được thực hiện bởi <a href="/" target="_blank">LAM SHOP</a> và phân phối bởi <a href="/" target="_blank">Cửa hàng LAM SHOP</a>
 				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>

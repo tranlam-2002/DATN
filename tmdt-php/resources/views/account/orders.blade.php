@@ -17,6 +17,11 @@
                     '0' => 'Đang chờ giao hàng',
                     '1' => 'Giao hàng thành công'
                 ];
+                $paymentMethods = [
+                    'cash_on_delivery' => 'Thanh toán khi nhận hàng',
+                    'payment_at_store' => 'Thanh toán tại cửa hàng',
+                    'vnpay' => 'Thanh toán bằng VNPAY',
+                ];
             @endphp
 
             <table class="table">
@@ -25,8 +30,8 @@
                     <th style="width: 100px">Mã ĐH</th>
                     <th>Tên Khách Hàng</th>
                     <th>Số Điện Thoại</th> 
-                    <th>Trạng Thái</th>
                     <th>Giao Hàng</th>
+                    <th>Thanh Toán</th>
                     <th>Ngày Đặt hàng</th>
                     <th style="width: 100px">&nbsp;</th>
                 </tr>
@@ -37,8 +42,8 @@
                         <td>{{ $customer->id }}</td>
                         <td>{{ $customer->name }}</td>
                         <td>{{ $customer->phone }}</td>
-                        <td>{{ $statusTexts[$customer->status] }}</td>
                         <td>{{ $deliveredTexts[$customer->delivered] }}</td>
+                        <td>{{ $paymentMethods[$customer->payment_method] ?? 'N/A' }}</td>
                         <td>{{ $customer->created_at }}</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="{{ route('orders.show', $customer->id) }}">

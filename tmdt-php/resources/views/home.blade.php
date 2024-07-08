@@ -8,7 +8,8 @@
 
 				@foreach($sliders as $slider)
 
-				<div class="item-slick1" style="background-image: url({{$slider->thumb}});">
+				<!-- Thêm lớp d-none d-md-block để ẩn slider khi ở dạng mobile -->
+				<div class="item-slick1 d-none d-md-block" style="background-image: url({{$slider->thumb}});">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -16,13 +17,13 @@
 									HOT 2024
 								</span>
 							</div>
-								
+									
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1" style="color: white;">
 									{{$slider->name}}
 								</h2>
 							</div>
-								
+									
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
 								<a href="{{$slider->url}}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Xem Thêm
@@ -32,21 +33,18 @@
 					</div>
 				</div>
 				@endforeach
+
 			</div>
 		</div>
 	</section>
 
-	<section class="sec-banner bg0 p-t-80 p-b-30">
+
+	<section class="sec-banner bg0 p-t-80 p-b-30 d-none d-md-block">
 		<div class="container">
 			<div class="row position-relative">
-				<button class="arrow-slick2 prev-slick2 slick-arrow">
-					<i class="fa fa-angle-left" aria-hidden="true"></i>
-				</button>
-				<button class="arrow-slick2 next-slick2 slick-arrow">
-					<i class="fa fa-angle-right" aria-hidden="true"></i>
-				</button>
 				<div class="promotion-container-wrapper" style="overflow: hidden;">
 					<div class="promotion-container d-flex">
+
 						@foreach($promotions as $promotion)
 						<div class="col-md-6 col-xl-4 p-b-30 promotion-item">
 							<!-- Block1 -->
@@ -68,12 +66,13 @@
 		</div>
 	</section>
 
+
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
 			<div class="p-b-10">
 				<div class="image-container">
-					<img src="/template/images/AsusSlider.jpg" alt="Asus Slider">
+					<img src="/template/images/AsusSlider.jpg" alt="Asus Slider" style="width: 100%;">
 				</div>
 			</div>
 
@@ -81,30 +80,37 @@
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
              		<div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/acer.jpg" alt="Brand 1">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/Asus.jpg" alt="Brand 2">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/hp.jpg" alt="Brand 3">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/msi.jpg" alt="Brand 4">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/Lenovo.jpg" alt="Brand 5">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/Amdo.jpg" alt="Brand 6">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/samsung.jpg" alt="Brand 7">
-                            </div>
-                            <div class="col-md-3 col-sm-6 brand-item">
-                                <img src="/template/images/acer.jpg" alt="Brand 8">
-                            </div>
+                             <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/acer.jpg" alt="Brand 1" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/Asus.jpg" alt="Brand 2" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/hp.jpg" alt="Brand 3" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/msi.jpg" alt="Brand 4" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/Lenovo.jpg" alt="Brand 5" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/Amdo.jpg" alt="Brand 6" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/samsung.jpg" alt="Brand 7" class="img-fluid">
+                        </div>
+
+                        <div class="col-md-3 col-sm-6 brand-item mb-3">
+                            <img src="/template/images/acer.jpg" alt="Brand 8" class="img-fluid">
+                        </div>
                         </div>
                     </div>
 				</div>
@@ -163,7 +169,7 @@
 		  {{-- DS sản pham --}}
 			<div id="loadProduct">
 				<div class="p-b-30 p-t-30">
-					<h4 class="ltext-105 txt-center respon1" style="color: black; font-family: 'PhpDebugbarFontAwesome';">
+					<h4 class="ltext-105 txt-center" style="color: black; font-family: 'PhpDebugbarFontAwesome';">
 						CÁC SẢN PHẨM DÀNH CHO BẠN
 					</h4>
 				</div>

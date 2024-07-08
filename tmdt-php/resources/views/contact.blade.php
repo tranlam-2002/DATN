@@ -20,7 +20,7 @@
 
 <!-- Title page -->
 <section class="">
-      <h2 class="txt-center">
+      <h2 class="txt-center" style="font-family: 'Material-Design-Iconic-Font';">
       Liên Hệ
     </h2>  
 </section>

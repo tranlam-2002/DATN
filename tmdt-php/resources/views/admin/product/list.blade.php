@@ -5,10 +5,11 @@
   <thead>
     <tr>
       <th style="">ID</th>
-      <th style="width: 400px;">Tên Sản Phẩm</th>
+      <th style="width: 300px;">Tên Sản Phẩm</th>
       <th>Danh Mục</th>
       <th>Giá Gốc</th>
       <th>Giá Khuyến Mại</th>
+      <th>Số Lượng</th>
       <th>Ảnh SP</th>
       <th>Active</th>
       <th>Update</th>
@@ -23,6 +24,7 @@
                 <td>{{$product->menu_id}}</td>
                 <td>{{$product->price}}</td>
                 <td>{{$product->price_sale}}</td>
+                <td>{{$product->quantity }}</td>
                 <td>
                       <a href="{{$product->thumb}}" target="_blank">
                       <img src="{{$product->thumb}}" height="40px">

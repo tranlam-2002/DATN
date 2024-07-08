@@ -9,11 +9,11 @@
 			</a>
 
 			<span class="stext-109 cl4">
-				Shoping Cart
+				Giỏ Hàng
 			</span>
 		</div>
 	</div>
-    <form class="bg0 p-t-20 p-b-85" method="post">
+    <form class="bg0 p-t-20 p-b-85"  method="post">
         @include('admin.alert')
 
         @if (count($products) != 0)
@@ -40,7 +40,7 @@
                                         $priceEnd = $price * $carts[$product->id];
 
                                         $total += $priceEnd;
-                                        @endphp
+                                    @endphp
                                         <tr class="table_row">
                                             <td class="column-1">
                                                 <div class="how-itemcart1">
@@ -67,6 +67,7 @@
                                             <td class="column-6 p-r-15">
                                                 <a href="/carts/delete/{{ $product->id }}">Xóa</a>
                                             </td>
+                                            
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -74,7 +75,7 @@
                             </div>
 
                             <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
-                                <div class="flex-w flex-m m-r-20 m-tb-5">
+                                {{-- <div class="flex-w flex-m m-r-20 m-tb-5">
                                     <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
                                            name="coupon" placeholder="Coupon Code">
 
@@ -82,25 +83,25 @@
                                         class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
                                         Mã giảm 
                                     </div>
-                                </div>
+                                </div> --}}
 
-                                <input type="submit" value="Update Cart" formaction="/update-cart"
+                                <input type="submit" value="Cập Nhật Giỏ Hàng" formaction="/update-cart"
                                     class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
                                 @csrf
                             </div>
                         </div>
                     </div>
-
+                   
                     <div class="col-sm-10 col-lg-7 col-xl-4 m-lr-auto m-b-50">
                         <div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
                             <h4 class="mtext-109 cl2 p-b-30">
-                                Cart Totals
+                                Thông Tin Thanh Toán
                             </h4>
 
                             <div class="flex-w flex-t p-t-27 p-b-33">
                                 <div class="size-208">
                                     <span class="mtext-101 cl2">
-                                        Total:
+                                        Tổng: 
                                     </span>
                                 </div>
 
@@ -108,6 +109,7 @@
                                     <span class="mtext-110 cl2">
                                         {{ number_format($total, 0, '', '.') }}
                                     </span>
+                                     
                                 </div>
                             </div>
 
@@ -116,11 +118,11 @@
                                 <div class="size-100 p-r-18 p-r-0-sm w-full-ssm">
 
                                     <div class="p-t-15">
-                                        <span class="stext-112 cl8">
+                                        <span class="stext-112 cl8" style="font-family: 'Montserrat-Bold';">
                                             Thông Tin Khách Hàng
                                         </span>
 
-                                        <div class="bor8 bg0 m-b-12">
+                                        <div class="bor8 bg0 m-b-12 m-t-5">
                                             <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng" required>
                                         </div>
 
@@ -139,15 +141,33 @@
                                         <div class="bor8 bg0 m-b-12">
                                             <textarea class="cl8 plh3 size-111 p-lr-15" name="content"></textarea>
                                         </div>
-
+                                        <div class="p-t-5">
+                                            <span class="stext-112 cl8" style="font-family: 'Montserrat-Bold';">Phương thức thanh toán</span>
+                                            <div class="m-t-5">
+                                                <label>
+                                                    <input type="radio" name="payment_method" value="cash_on_delivery" required> Thanh toán khi nhận hàng
+                                                </label>
+                                            </div>
+                                            <div class="">
+                                                <label>
+                                                    <input type="radio" name="payment_method" value="payment_at_store" required> Thanh toán tại cửa hàng
+                                                </label>
+                                            </div>
+                                            <div class="">
+                                                <label>
+                                                    <input type="radio" name="payment_method" value="vnpay" required> Thanh toán bằng VNPAY
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                               Đặt Hàng
+                            <input type="hidden" name="total" value="{{ $total }}">
+                            <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" name="redirect" type="submit">
+                                   Đặt Hàng
                             </button>
                         </div>
+                        
                     </div>
                 </div>
             

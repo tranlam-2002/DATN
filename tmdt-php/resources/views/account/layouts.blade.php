@@ -1,7 +1,9 @@
-@extends('welcome')
-   @section('content')
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    @extends('welcome')
+    
+    @section('content')
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('/template/css/account.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
@@ -16,6 +18,22 @@
                 </div>
             </main>
         </div>
+    </div>
+
+    <!-- Mobile navigation -->
+    <div class="mobile-nav">
+        <a href="{{ route('account.index') }}" class="@if(request()->routeIs('account.index')) active @endif">
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="{{ route('account.edit') }}" class="@if(request()->routeIs('account.edit')) active @endif">
+            <i class="fas fa-edit"></i>
+        </a>
+        <a href="{{ route('account.change-password') }}" class="@if(request()->routeIs('account.change-password')) active @endif">
+            <i class="fas fa-key"></i>
+        </a>
+        <a href="{{ route('account.orders') }}" class="@if(request()->routeIs('account.orders')) active @endif">
+            <i class="zmdi zmdi-shopping-cart"></i>
+        </a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

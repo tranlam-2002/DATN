@@ -53,6 +53,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Cập Nhật Khuyến Mại</button>
+                  <a href="{{ route('admin.promotions.index') }}" class="btn btn-secondary ms-auto">Quay Lại Danh Sách</a>
                 </div>
                 @csrf
               </form>

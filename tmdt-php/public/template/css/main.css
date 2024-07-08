@@ -97,6 +97,110 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   src: url('../fonts/Montserrat/Montserrat-Bold.ttf'); 
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+    font-weight: 100; /* Độ đậm 1 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300; /* Độ đậm 3 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400; /* Độ đậm 4 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500; /* Độ đậm 5 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700; /* Độ đậm 7 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-ThinItalic.ttf') format('truetype');
+    font-weight: 100; /* Độ đậm 1 */
+    font-style: italic; /* In nghiêng */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
+    font-weight: 300; /* Độ đậm 3 */
+    font-style: italic; /* In nghiêng */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Regular.ttf') format('truetype');
+    font-weight: 400; /* Độ đậm 4 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 700; /* Độ đậm 7 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300; /* Độ đậm 3 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* Độ đậm 5 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* Độ đậm 8 */
+    font-style: normal; /* Kiểu dáng thông thường */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-Italic.ttf') format('truetype');
+    font-weight: 400; /* Độ đậm 4 */
+    font-style: italic; /* In nghiêng */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-LightItalic.ttf') format('truetype');
+    font-weight: 300; /* Độ đậm 3 */
+    font-style: italic; /* In nghiêng */
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open_Sans/static/OpenSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700; /* Độ đậm 7 */
+    font-style: italic; /* In nghiêng */
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
@@ -225,7 +329,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Top bar ]*/
 .top-bar {
   height: 40px;
-  background-color: #222;
+  /* background-color: #222; */
+  background-image: url('/template/images/slider-khuyenmai-1.png');
+  background-size: cover; /* Điều chỉnh để hình ảnh phủ toàn bộ khu vực */
+  background-position: center; /* Đặt vị trí trung tâm của hình ảnh */
+  background-repeat: no-repeat; /* Ngăn hình ảnh lặp lại */
 }
 
 /*---------------------------------------------*/
@@ -233,7 +341,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   font-family: Poppins-Regular;
   font-size: 12px;
   line-height: 1.8;
-  color: #b2b2b2;
+  color: #fffdfd;
 }
 
 
@@ -244,7 +352,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   line-height: 1.8;
 
   height: 100%;
-  color: #b2b2b2;
+  color: #f7f4f4;
   border-right: 1px solid rgba(255,255,255,0.3);
 }
 
@@ -253,9 +361,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .right-top-bar a:hover {
-  color: #6c7ae0;
+  color: #1029ec;
 }
 
+.left-top-bar a:hover {
+  color: #062af3;
+}
 
 /*---------------------------------------------*/
 .topbar-mobile li {
@@ -367,8 +478,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .main-menu > li > a {
-  font-family: Poppins-Medium;
-  font-size: 14px;
+  /* font-family: Poppins-Medium; */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500; /* Độ đậm thông thường */
+  font-style: normal; /* Kiểu dáng thông thường */
+  font-size: 15px;
   color: #333;
   padding: 5px 0px;
   transition: all 0.4s;
@@ -1612,7 +1726,9 @@ button.mfp-close {
 }
 
 .tab01 .nav-link {
-  font-family: Poppins-Regular;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 15px;
   color: #888;
   line-height: 1.2;
@@ -1966,7 +2082,7 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .table-shopping-cart .table_head th {
-  font-family: Poppins-Bold;
+  font-family: system-ui;
   font-size: 13px;
   color: #555;
   text-transform: uppercase;
@@ -2131,7 +2247,7 @@ input.num-product::-webkit-inner-spin-button {
 .cl1 {color: #717fe0;}
 .cl2 {color: #333;}
 .cl3 {color: #666;}
-.cl4 {color: #080808;}
+.cl4 {color: #1d1d1dc2;}
 .cl5 {color: #222;}
 .cl6 {color: #888;}
 .cl7 {color: #b2b2b2;}
@@ -2144,7 +2260,9 @@ input.num-product::-webkit-inner-spin-button {
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
 .stext-101 {
-  font-family: Poppins-Medium;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
   font-size: 15px;
   line-height: 1.466667;
   text-transform: uppercase;
@@ -2163,7 +2281,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-104 {
-  font-family: Poppins-Regular;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 14px;
   line-height: 1.466667;
 }
@@ -2182,8 +2302,10 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-107 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
   line-height: 1.923;
 }
 
@@ -2219,7 +2341,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-113 {
-  font-family: Poppins-Light;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-size: 14px;
   line-height: 1.7857;
 }
@@ -2267,13 +2391,17 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .mtext-102 {
-  font-family: Poppins-SemiBold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
   font-size: 16px;
   line-height: 1.6;
 }
 
 .mtext-103 {
-  font-family: Poppins-Bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-style: normal;
   font-size: 18px;
   line-height: 1.333333;
   text-transform: uppercase;
@@ -2286,7 +2414,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .mtext-105 {
-  font-family: Poppins-Regular;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-size: 24px;
   line-height: 1.5;
 }
@@ -2317,7 +2447,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .mtext-110 {
-  font-family: Poppins-Regular;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-size: 18px;
   line-height: 1.222222;
 }
@@ -2377,7 +2509,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .ltext-106 {
-  font-family: Poppins-Bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 36px;
   line-height: 1.2;
 }
@@ -2437,7 +2571,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .size-103 {
   min-width: 179px;
-  height: 46px;
+  height: 42px;
 }
 
 .size-104 {

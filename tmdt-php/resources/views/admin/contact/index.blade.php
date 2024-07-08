@@ -7,7 +7,6 @@
             <tr>
                 <th style="width: 50px">ID</th>
                 <th>Email</th>
-                <th>Lời Nhắn</th>
                 <th>Ngày Gửi</th>
                 <th style="width: 100px">&nbsp;</th>
             </tr>
@@ -17,10 +16,9 @@
                 <tr>
                     <td>{{ $contact->id }}</td>
                     <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->message }}</td>
                     <td>{{ $contact->created_at }}</td>
                     <td>
-                    <a class="btn btn-primary btn-sm" href="#">
+                    <a class="btn btn-primary btn-sm" href="{{ route('contacts.show', $contact->id) }}">
                         <i class="fas fa-eye"></i>
                     </a>
                     <a href="#" class="btn btn-danger btn-sm"

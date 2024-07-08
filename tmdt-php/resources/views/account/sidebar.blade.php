@@ -5,22 +5,26 @@
     <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link @if(request()->routeIs('account.index')) active @endif" href="{{ route('account.index') }}">
-                Thông tin tài khoản
+                <i class="fas fa-user"></i>
+                <span>Thông tin tài khoản</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link @if(request()->routeIs('account.edit')) active @endif" href="{{ route('account.edit') }}">
-                Chỉnh sửa tài khoản
+                <i class="fas fa-edit"></i>
+                <span>Chỉnh sửa tài khoản</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link @if(request()->routeIs('account.change-password')) active @endif" href="{{ route('account.change-password') }}">
-                Đổi mật khẩu
+                <i class="fas fa-key"></i>
+                <span>Đổi mật khẩu</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link @if(request()->routeIs('account.orders')) active @endif" href="{{ route('account.orders') }}">
-                Lịch sử đơn hàng
+                <i class="zmdi zmdi-shopping-cart"></i>
+                <span>Lịch sử đơn hàng</span>
             </a>
         </li>
     </ul>

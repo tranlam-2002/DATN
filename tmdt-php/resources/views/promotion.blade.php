@@ -4,6 +4,9 @@
 <!-- Content page -->
 <section class="bg0 p-t-75 p-b-120">
     <div class="container">
+            <div class="p-b-30">
+                 <h2 class="txt-center respon1" style="color: rgb(19, 113, 244);  font-family: 'Material-Design-Iconic-Font';"> CHƯƠNG TRÌNH KHUYẾN MẠI HOT </h2>
+            </div>
         <div class="row p-b-20">
             @foreach($promotions as $promotion)
             <div class="col-12 p-b-90">
@@ -20,7 +23,7 @@
                                 <span class="stext-111 cl8">
                                     Thời gian bắt đầu: {{ $promotion->updated_at->format('d/m/Y H:i') }}
                                 </span>
-                                <a href="{{ url('/promotions/' . $promotion->id) }}" class="btn btn-primary ml-3" style="font-size: 14px;">Xem thêm</a>
+                                <a href="{{ url('/promotions/' . $promotion->id) }}" class="btn btn-primary ml-3" style="font-size: 14px; margin-bottom: 10px;">Xem thêm</a>
                             </div>
                         </div>
                     </div>

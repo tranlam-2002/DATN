@@ -1,11 +1,12 @@
+/* CSS chung */
 .account-sidebar {
     top: 0;
     bottom: 0;
-    left: 120px; /* Dịch sang phải 120px */
+    left: 120px;
     z-index: 1000;
     padding: 48px 0 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    border: 1px solid #ddd; /* Đường chỉ bao quanh sidebar */
+    border: 1px solid #ddd;
     background-color: #f8f9fa;
 }
 
@@ -18,8 +19,8 @@
 }
 
 .main-content {
-    padding-top: 48px; /* Thêm padding-top để tránh bị đè lên sidebar */
-    margin-left: 240px; /* Điều chỉnh giá trị này theo chiều rộng của sidebar */
+    padding-top: 48px;
+    margin-left: 240px;
 }
 
 .nav-link.active {
@@ -36,7 +37,7 @@
     text-align: center;
     font-weight: bold;
     padding-bottom: 10px;
-    border-bottom: 1px solid #ddd; /* Đường chỉ ngăn cách */
+    border-bottom: 1px solid #ddd;
     margin-bottom: 15px;
 }
 
@@ -45,15 +46,70 @@
     margin-right: 10px;
 }
 
-/* Thêm CSS cho phần nội dung chính */
 .main-content-wrapper {
-    padding-left: 20px; /* Đảm bảo nội dung không bị đè lên sidebar */
+    padding-left: 20px;
 }
 
 .main-content {
-    background-color: #f8f9fa; /* Màu nền của background */
-    border: 1px solid #ddd; /* Viền bo tròn */
-    border-radius: 4px; /* Bán kính bo tròn */
-    
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
+/* CSS cho mobile */
+@media (max-width: 768px) {
+    .account-sidebar {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: #f8f9fa;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px 5px;
+        z-index: 999;
+    }
+    .mobile-nav a {
+        color: #007bff;
+        text-align: center;
+        font-size: 14px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: color 0.3s;
+    }
+    .mobile-nav a.active,
+    .mobile-nav a:hover {
+        color: #ff0000; /* Đổi màu biểu tượng khi nhấn vào hoặc di chuột */
+    }
+    .mobile-nav a i {
+        font-size: 24px;
+    }
+    .main-content-wrapper {
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Chỉ giữ lại biểu tượng trong sidebar */
+    .nav-item a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        color: #007bff;
+        text-align: center;
+        transition: color 0.3s;
+    }
+    .nav-item a i {
+        font-size: 24px; /* Kích thước biểu tượng */
+    }
+    .nav-item a.active,
+    .nav-item a:hover {
+        color: #ff0000; /* Đổi màu biểu tượng khi nhấn vào hoặc di chuột */
+    }
+}

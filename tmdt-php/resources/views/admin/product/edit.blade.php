@@ -34,10 +34,16 @@
                   </div>
                   
                   <div class="col-md-6">
-                   <div class="form-group">
-                    <label for="menu">Giá Giảm</label>
-                    <input type="number" name="price_sale" value="{{$product->price_sale}}" class="form-control">
+                      <div class="form-group">
+                        <label for="menu">Giá Giảm</label>
+                        <input type="number" name="price_sale" value="{{$product->price_sale}}" class="form-control">
+                      </div>
                     </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="menu">Số Lượng</label>
+                          <input type="number" name="quantity" value="{{$product->quantity}}" class="form-control">
+                      </div>
                     </div>
                   </div>
 
@@ -79,6 +85,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Cập nhật Sản Phẩm</button>
+                  <a href="/admin/products/list" class="btn btn-secondary ms-auto">Quay Lại Danh Sách</a>
                 </div>
                 @csrf
               </form>

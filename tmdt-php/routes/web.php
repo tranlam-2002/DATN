@@ -15,8 +15,10 @@ use App\Models\Product;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PromotionsController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Services\UploadService;
 use App\Http\Controllers\UserController;
 use App\Http\View\Composers\MenuComposer;
@@ -91,7 +93,8 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
        Route::Delete('users/destroy', [\App\Http\Controllers\Admin\UserControllers::class, 'destroy']);
 
    // Route để quản lý thông tin liên hệ
-      Route::get('contact/', [\App\Http\Controllers\Admin\ContactController::class, 'index']);
+      Route::get('contacts/', [\App\Http\Controllers\Admin\ContactController::class, 'index'])->name('contacts.index');
+      Route::get('contacts/{id}', [\App\Http\Controllers\Admin\ContactController::class, 'show'])->name('contacts.show');
       Route::DELETE('contact/destroy', [\App\Http\Controllers\Admin\ContactController::class, 'destroy']);
     
 });
@@ -110,6 +113,7 @@ Route::post('/forgot_password', [UserController::class,'postForgot_password'])->
 
   
 Route::get('/', [MainController::class,'index']);
+Route::get('/search', [SearchController::class, 'search'])->name('search');
 Route::post('/services/load-product', [MainController::class,'loadProduct']); 
 
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']); 
@@ -142,4 +146,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('update-cart', [CartController::class, 'update']);
     Route::get('carts/delete/{id}', [CartController::class, 'remove']);
     Route::post('carts', [CartController::class, 'addCart']);
+    
+    //thanhtoan
+    Route::get('/vnpay/return', [PaymentController::class, 'vnpayReturn'])->name('vnpay.return');
 });

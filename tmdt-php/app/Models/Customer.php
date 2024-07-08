@@ -18,6 +18,7 @@ class Customer extends Model
             'content',
             'status',
             'delivered', 
+            'payment_method',
         ];
 
     public function user()

@@ -8,6 +8,11 @@
                     'approved' => 'Đã duyệt',
                     'shipped' => 'Đã giao',
                   ];
+                $paymentMethods = [
+                    'cash_on_delivery' => 'Thanh toán khi nhận hàng',
+                    'payment_at_store' => 'Thanh toán tại cửa hàng',
+                    'vnpay' => 'Thanh toán bằng VNPAY',
+                ];
             @endphp
         <ul>
             <li>Tên khách hàng: <strong>{{ $customer->name }}</strong></li>
@@ -15,6 +20,7 @@
             <li>Địa chỉ: <strong>{{ $customer->address }}</strong></li>
             <li>Email: <strong>{{ $customer->email }}</strong></li>
             <li>Ghi chú: <strong>{{ $customer->content }}</strong></li>
+            <li>Phương thức thanh toán: <strong>{{ $paymentMethods[$customer->payment_method] ?? 'N/A' }}</strong></li>
             <li>Trạng thái:
                     <strong style="color: rgb(90, 216, 90);">
                         @if($customer->delivered)
@@ -62,6 +68,9 @@
                 </tr>
             </tbody>
         </table>
+        <div class="text-right p-b-10 p-r-15">
+            <a href="/admin/customers/status" class="btn btn-secondary">Quay Lại Danh Sách</a>
+        </div>
     </div>
 @endsection
 

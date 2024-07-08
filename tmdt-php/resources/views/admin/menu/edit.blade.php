@@ -42,10 +42,10 @@
                     </div>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Cập Nhật Danh Mục</button>
-                </div>
+                  <a href="/admin/menus/list" class="btn btn-secondary ms-auto">Quay Lại Danh Sách</a>
+                </div>  
                 @csrf
               </form>
 @endsection

@@ -21,6 +21,13 @@ class ContactController extends Controller
             'contacts'=>$this->contact->getContact()
         ]);
     }
+    public function show($id)
+    {
+        $contact = ContactMessage::findOrFail($id);
+        return view('admin.contact.detai', compact('contact'), [
+            'title' => 'Chi tiết liên hệ'
+        ]);
+    }
         public function destroy(Request $request){
         $result = $this->contact->delete($request);
         if($result){

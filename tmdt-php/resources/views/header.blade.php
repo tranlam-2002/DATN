@@ -7,7 +7,7 @@
 						<div class="content-topbar flex-sb-m h-full container">
 							<div class="left-top-bar ">
 								<button class="btn btn-promotion" onclick="window.location.href='/promotions'" 
-								style="color: #b2b2b2; font-family: Poppins-Regular; font-size: 12px;">Khuyến mại</button>
+								style="color: #f5f4f9; font-family: Poppins-Regular; font-size: 12px;">Khuyến mại</button>
 							</div>
 
 							<div class="right-top-bar flex-w h-full">
@@ -20,8 +20,8 @@
 			<div class="wrap-menu-desktop how-shadow1">
 				<nav class="limiter-menu-desktop container">
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="/template/images/icons/logo-01.png" alt="IMG-LOGO">
+					<a href="/home" class="logo">
+						<img src="/template/images/icons/logo-03.png" alt="IMG-LOGO">
 					</a>
 					
 					<!-- Menu desktop -->
@@ -60,7 +60,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="/template/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="/"><img src="/template/images/icons/logo-03.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -95,12 +95,14 @@
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
-						Khuyến mại
+						<a href="/promotions" class="cl4" style="color: #f7f4f4">
+							Khuyến mại
+						</a>
+						
 					</div>
 				</li>
 				<li>
-					
-					<div class="right-top-bar flex-w h-full">
+					<div class="right-top-bar flex-w">
 						@include('fe.index')
 					</div>
 				</li>
@@ -122,7 +124,7 @@
 					<img src="/template/images/icons/icon-close2.png" alt="CLOSE">
 				</button>
 
-				<form class="wrap-search-header flex-w p-l-15">
+				<form class="wrap-search-header flex-w p-l-15" action="{{ route('search') }}" method="GET">
 					<button class="flex-c-m trans-04">
 						<i class="zmdi zmdi-search"></i>
 					</button>
