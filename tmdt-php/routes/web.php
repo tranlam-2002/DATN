@@ -47,11 +47,12 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
       Route::prefix('menus')->group(function(){
          Route::get('add', [MenuController::class, 'create']);
          Route::post('add', [MenuController::class, 'store']);
-         Route::get('list', [MenuController::class, 'index']);      
+         Route::get('list', [MenuController::class, 'index']); 
          Route::get('edit/{menu}', [MenuController::class, 'show']);
          Route::post('edit/{menu}', [MenuController::class, 'update']);
          Route::DELETE('destroy', [MenuController::class, 'destroy']);
- 
+         Route::get('search', [MenuController::class, 'search'])->name('admin.menus.searchMenus');
+         
       }); 
    #sanpham
       Route::prefix('products')->group(function(){
@@ -61,6 +62,8 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
         Route::get('edit/{product}', [ProductsController::class, 'show']);
          Route::post('edit/{product}', [ProductsController::class, 'update']);
          Route::DELETE('destroy', [ProductsController::class, 'destroy']);
+         Route::get('search', [ProductsController::class, 'search'])->name('admin.products.search');
+
    });
    #Slider
    Route::prefix('sliders')->group(function(){
@@ -86,7 +89,11 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
        Route::Delete('customers/destroy', [\App\Http\Controllers\Admin\CartController::class, 'destroy']);
        Route::get('customers/status', [\App\Http\Controllers\Admin\CartController::class, 'status'])->name('admin.carts.index');
        Route::put('customers/{customerId}/updateStatus', [\App\Http\Controllers\Admin\CartController::class, 'updateStatus'])->name('admin.carts.updateStatus');
-   
+       Route::get('customers/{id}/export-pdf', [\App\Http\Controllers\Admin\CartController::class, 'exportPDF'])->name('admin.customers.pdf');
+       Route::get('customers/search', [\App\Http\Controllers\Admin\CartController::class, 'search'])->name('admin.customers.search');
+       Route::get('customers/searchs', [\App\Http\Controllers\Admin\CartController::class, 'searchXLDH'])->name('admin.customers.searchs');
+
+       
    #User khach hang   
        Route::get('users', [\App\Http\Controllers\Admin\UserControllers::class, 'index']);
       //  Route::get('users/view{users}', [\App\Http\Controllers\Admin\UserControllers::class::class, 'show']);
@@ -132,12 +139,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/account/edit', [AccountController::class, 'edit'])->name('account.edit');
     Route::put('/account/update', [AccountController::class, 'update'])->name('account.update');
     Route::get('/account/change-password', [AccountController::class, 'showChangePasswordForm'])->name('account.change-password');
-    Route::post('/account/change-password', [AccountController::class, 'changePassword'])->name('account.change-password');
+    Route::post('/account/change-password', [AccountController::class, 'changePassword'])->name('account.changePassword');
     Route::get('/account/orders', [AccountController::class, 'orders'])->name('account.orders');
     Route::get('/account/orders/{id}', [AccountController::class, 'show'])->name('orders.show');
     Route::put('/account/orders/{customerId}/showPut', [AccountController::class, 'showPut'])->name('orders.showPut');
     Route::delete('/account/orders/{id}', [AccountController::class, 'destroy'])->name('orders.destroy');
-    
 
     
     // Customer

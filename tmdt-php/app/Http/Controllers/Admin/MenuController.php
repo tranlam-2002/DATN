@@ -31,6 +31,18 @@ class MenuController extends Controller
             'menus' => $this->menuService->getAll()
         ]);
     }
+    public function search(Request $request)
+    {
+        // Nhận từ khóa tìm kiếm
+        $search = $request->query('search');
+        
+        // Gọi phương thức từ service để lấy danh sách danh mục
+        $menus = $this->menuService->searchMenus($search);
+
+        return view('admin.menu.list', compact('menus'))->with([
+            'title' => 'Tìm Kiếm Danh Mục',
+        ]);
+    }
     public function show(Menu $menu){
         // dd($menu->name);
        return view('admin.menu.edit', [

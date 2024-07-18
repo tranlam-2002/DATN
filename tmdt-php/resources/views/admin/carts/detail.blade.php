@@ -38,11 +38,11 @@
         <table class="table">
             <tbody>
             <tr class="table_head">
-                <th class="column-1">IMG</th>
-                <th class="column-2">Product</th>
-                <th class="column-3">Price</th>
-                <th class="column-4">Quantity</th>
-                <th class="column-5">Total</th>
+                <th class="column-1">Ảnh</th>
+                <th class="column-2">Sản phẩm</th>
+                <th class="column-3">Giá</th>
+                <th class="column-4">Số lượng</th>
+                <th class="column-5">Tổng</th>
             </tr>
 
             @foreach($carts as $key => $cart)
@@ -69,9 +69,8 @@
             </tbody>
         </table>
         <div class="text-right p-b-10 p-r-15">
+            <a href="{{ route('admin.customers.pdf', ['id' => $customer->id]) }}" class="btn btn-primary">Xuất PDF</a>
             <a href="/admin/customers/status" class="btn btn-secondary">Quay Lại Danh Sách</a>
         </div>
     </div>
 @endsection
-
-

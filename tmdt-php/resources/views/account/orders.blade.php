@@ -4,8 +4,9 @@
     <div class="main-content-wrapper">
         <h2>Lịch sử đơn hàng</h2>
         @include('alert')
+
         @if($customers->isEmpty())
-            <p>Bạn chưa có đơn hàng nào.</p>
+            <p>Bạn không có đơn hàng nào.</p>
         @else
             @php
                 $statusTexts = [
@@ -23,13 +24,25 @@
                     'vnpay' => 'Thanh toán bằng VNPAY',
                 ];
             @endphp
-
+            <!-- Thêm Form Tìm Kiếm -->
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <form action="{{ route('account.orders') }}" method="GET">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Tìm kiếm đơn hàng..." value="{{ request()->query('search') }}">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <table class="table">
                 <thead>
                 <tr>
                     <th style="width: 100px">Mã ĐH</th>
                     <th>Tên Khách Hàng</th>
-                    <th>Số Điện Thoại</th> 
+                    <th>Số Điện Thoại</th>
                     <th>Giao Hàng</th>
                     <th>Thanh Toán</th>
                     <th>Ngày Đặt hàng</th>
@@ -61,7 +74,7 @@
                 @endforeach
                 </tbody>
             </table>
-            
+
             <div class="card-footer clearfix">
                 {!! $customers->links() !!}
             </div>

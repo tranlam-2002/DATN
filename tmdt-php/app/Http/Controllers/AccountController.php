@@ -76,17 +76,48 @@ class AccountController extends Controller
         return redirect()->route('account.index')->with('success', 'Mật khẩu đã được thay đổi.');
     }
 
-    public function orders()
+    public function orders(Request $request)
     {
         // Lấy user hiện tại
         $user = Auth::user();
-
-        // Lấy danh sách đơn hàng của user hiện tại và phân trang
-        $customers = Customer::where('user_id', $user->id)->paginate(10);
         
+         // Nhận từ khóa tìm kiếm
+        $search = $request->query('search');
+        
+        // Trạng thái đơn hàng
+        $statusTexts = [
+            'Chờ duyệt' => 'pending',
+            'Đã duyệt' => 'approved',
+            'Giao hàng' => 'shipped',
+        ];
+        
+        // Tìm giá trị trạng thái nếu từ khóa khớp
+        $statusValue = null;
+        foreach ($statusTexts as $key => $value) {
+            if (stripos($key, $search) !== false) {
+                $statusValue = $value;
+                break;
+            }
+        }
+        
+        // Lấy danh sách đơn hàng của user hiện tại và phân trang
+        $customers = Customer::where('user_id', $user->id)
+            ->when($search, function ($query) use ($search, $statusValue) {
+                return $query->where(function ($query) use ($search, $statusValue) {
+                    $query->where('name', 'like', "%{$search}%")
+                        ->orWhere('phone', 'like', "%{$search}%")
+                        ->orWhere('id', 'like', "%{$search}%");
+                    if ($statusValue) {
+                        $query->orWhere('status', $statusValue);
+                    }
+                });
+            })
+            ->orderByDesc('id')
+            ->paginate(10);
+
         return view('account.orders', compact('customers'), [
-                'title'=>'Lịch Sử Đơn Hàng'
-         ]);
+            'title'=>'Lịch Sử Đơn Hàng'
+        ]);
     }
 
     public function show(Request $request, $customerId)

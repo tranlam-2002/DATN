@@ -26,7 +26,19 @@ class ProductsController extends Controller
             'products'=> $this->productService->get()
         ]);
     }
+    public function search(Request $request)
+    {
+        $search = $request->query('search');
 
+        $products = Product::when($search, function ($query, $search) {
+            return $query->where('name', 'like', "%{$search}%")
+                        ->orWhere('id', 'like', "%{$search}%");
+        })->paginate(10);
+
+        return view('admin.product.list', compact('products'),[
+            'title'=>'Danh Sách Sản Phẩm'
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      */

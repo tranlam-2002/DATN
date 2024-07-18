@@ -36,7 +36,6 @@ class Helper
                 $html .= self::menu($menus, $menu->id, $char . '|--');
             }
         }
-
         return $html;
     }
 
@@ -103,7 +102,7 @@ class Helper
         return number_format($price) . ' ' . $currency;
     } else {
         // Hiển thị liên hệ nếu không có giá
-        return '<a href="/lien-he.html">Liên Hệ</a>';
+        return '<a href="/contact">Liên Hệ</a>';
     }
     }
 }

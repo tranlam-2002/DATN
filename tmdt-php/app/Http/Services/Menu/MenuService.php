@@ -16,7 +16,20 @@ class MenuService{
         ->get();
     }
      public function getAll(){
-        return Menu::orderByDesc('id')->paginate(20);
+        return Menu::orderByDesc('id')->paginate(30);
+    }
+    // Tìm kiếm danh mục
+    public function searchMenus($search){
+        return Menu::with('children')
+            ->where(function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                      ->orWhere('id', 'like', "%{$search}%");
+            })
+            ->orWhereHas('children', function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                      ->orWhere('id', 'like', "%{$search}%");
+            })
+            ->paginate(15);
     }
     public function create($request){
         try{
