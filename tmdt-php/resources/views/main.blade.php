@@ -4,7 +4,7 @@
 	@include('head')
 </head>
 <body > 
-	{{-- <div class="animsition"> --}}
+	
 	<!-- Header -->
 	@include('header')
 
@@ -18,8 +18,8 @@
 	<!-- Footer -->
     @include('footer')
 	
-	{{-- </div> --}}
-	
-	
+	{{-- Phần liên hệ nhanh --}}
+    @include('contact-section')
+
 </body>
 </html>

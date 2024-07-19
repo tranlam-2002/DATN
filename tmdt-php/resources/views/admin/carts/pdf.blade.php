@@ -179,7 +179,7 @@
                 <p>185 Minh Khai, Hoàng Mai, Hà Nội</p>
                 <p>Email: tranlam2782002@gmail.com</p>
                 <p>Điện thoại: (+84) 326 450 840</p>
-                <p>Giờ mở cửa: 8:00 sáng - 6:00 chiều</p>
+                <p>Giờ mở cửa: 7:00 sáng - 22:00 tối</p>
             </div>
         </div>
     </div>

@@ -83,7 +83,7 @@
 						</li>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								<span style="margin-right: 5px;"><i class="fas fa-clock"></i></span> Giờ mở cửa: 8:00 sáng - 6:00 chiều
+								<span style="margin-right: 5px;"><i class="fas fa-clock"></i></span> Giờ mở cửa: 7:00 sáng - 22:00 tối
 							</a>
 						</li>
 					</ul>
@@ -107,7 +107,7 @@
 						</div>
 					</form>
 					<div class="p-t-10 p-l-5">
-						<a href="https://www.facebook.com/vua.vua.965/" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
+						<a href="https://www.facebook.com/profile.php?id=61563104874221" class="fs-25 cl7 hov-cl1 trans-04 m-r-16">
 							<i class="fab fa-facebook-square" style="color: #0a65e3;"></i>
 						</a>
 

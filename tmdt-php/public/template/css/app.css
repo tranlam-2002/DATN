@@ -1,0 +1,67 @@
+.global-fixed-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
+.global-fixed-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Căn giữa biểu tượng và chữ */
+    padding: 8px; /* Giữ padding cho màn hình lớn */
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+    width: 155px; /* Giữ độ rộng cho màn hình lớn */
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #007bff53; /* Thêm màu viền cho khung hình */
+}
+
+.global-fixed-contact-item:hover {
+    color: #ff5733; /* Đổi màu khi hover */
+    border-color: #ff5733; /* Đổi màu viền khi hover */
+}
+
+.global-fixed-contact-icon {
+    margin-right: 12px; /* Giảm khoảng cách giữa biểu tượng và nội dung */
+    font-size: 25px; /* Tăng kích thước của biểu tượng */
+    color: #007bff; /* Đổi màu của biểu tượng */
+}
+
+.global-fixed-contact-title {
+    font-weight: bold;
+    margin: 0;
+    font-size: 14px; /* Tăng kích thước của chữ tiêu đề */
+}
+
+.global-fixed-contact-text {
+    margin: 0;
+    font-size: 12px; /* Giảm kích thước của văn bản */
+    color: #666;
+}
+
+/* Media Query để điều chỉnh kích thước và bố cục trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .global-fixed-contact-item {
+        width: 60px; /* Giảm độ rộng để vừa khít với biểu tượng */
+        padding: 8px; /* Đặt padding nhỏ hơn để khung bao quanh vừa khít hơn */
+        text-align: center; /* Căn giữa nội dung */
+    }
+    
+    .global-fixed-contact-title,
+    .global-fixed-contact-text {
+        display: none; /* Ẩn chữ */
+    }
+    
+    .global-fixed-contact-icon {
+        margin-right: 0; /* Loại bỏ khoảng cách giữa biểu tượng và khung */
+        font-size: 30px; /* Tăng kích thước của biểu tượng cho di động */
+    }
+}
