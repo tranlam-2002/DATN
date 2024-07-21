@@ -2269,7 +2269,8 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-102 {
-  font-family: Poppins-Regular;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -2428,7 +2429,8 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .mtext-107 {
-  font-family: Poppins-Regular;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.625;
 }
@@ -3297,7 +3299,44 @@ input.num-product::-webkit-inner-spin-button {
   opacity: 1;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sec-product-detail {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 
+    .wrap-slick3-dots {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .wrap-slick3-dots img {
+        width: 40px;
+        height: auto;
+    }
+
+    .item-slick3 {
+        padding: 0;
+    }
+
+    .wrap-pic-w img {
+        width: 55%; /* Điều chỉnh kích thước hình ảnh để nhỏ hơn */
+        height: auto;
+    }
+
+    .how-pos1 {
+        bottom: 5px;
+        right: 5px;
+        padding: 6px;
+    }
+
+    .how-pos1 i {
+        font-size: 14px;
+    }
+}
 
 
 /*==================================================================

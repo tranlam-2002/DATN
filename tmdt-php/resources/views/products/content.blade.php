@@ -218,7 +218,7 @@
                                             <div class="size-207">
                                                 <div class="flex-w flex-sb-m p-b-17">
 													<span class="mtext-107 cl2 p-r-20">
-														Ariana Grande
+														Lưu Ly Nguyễn
 													</span>
 
                                                     <span class="fs-18 cl11">
@@ -231,8 +231,8 @@
                                                 </div>
 
                                                 <p class="stext-102 cl6">
-                                                    Quod autem in homine praestantissimum atque optimum est, id
-                                                    deseruit. Apud ceteros autem philosophos
+                                                    Sản phẩm dùng tốt, đẹp, ổn định
+                                                    Chất lượng bảo hành của cửa hàng chu đáo tận tâm với khách hàng
                                                 </p>
                                             </div>
                                         </div>
@@ -240,16 +240,16 @@
                                         <!-- Add review -->
                                         <form class="w-full">
                                             <h5 class="mtext-108 cl2 p-b-7">
-                                                Add a review
+                                                Thêm một bài đánh giá
                                             </h5>
 
                                             <p class="stext-102 cl6">
-                                                Your email address will not be published. Required fields are marked *
+                                                Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu *
                                             </p>
 
                                             <div class="flex-w flex-m p-t-50 p-b-23">
 												<span class="stext-102 cl3 m-r-16">
-													Your Rating
+													Đánh giá của bạn
 												</span>
 
                                                 <span class="wrap-rating fs-18 cl11 pointer">
@@ -264,13 +264,13 @@
 
                                             <div class="row p-b-25">
                                                 <div class="col-12 p-b-5">
-                                                    <label class="stext-102 cl3" for="review">Your review</label>
+                                                    <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
                                                     <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
                                                               id="review" name="review"></textarea>
                                                 </div>
 
                                                 <div class="col-sm-6 p-b-5">
-                                                    <label class="stext-102 cl3" for="name">Name</label>
+                                                    <label class="stext-102 cl3" for="name">Tên</label>
                                                     <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name"
                                                            type="text" name="name">
                                                 </div>
@@ -284,7 +284,7 @@
 
                                             <button
                                                 class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-                                                Submit
+                                                Gửi
                                             </button>
                                         </form>
                                     </div>

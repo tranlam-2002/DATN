@@ -38,36 +38,36 @@
             </ul>
         </div>
 
-        <div class="carts">
+        <div class="carts order-detail">
             @php $total = 0; @endphp
             
             <table class="table">
                 <tbody>
-                <tr class="table_head">
-                    <th class="column-1">Ảnh</th>
-                    <th class="column-2">Sản phẩm</th>
-                    <th class="column-3">Giá</th>
-                    <th class="column-4">Số lượng</th>
-                    <th class="column-5">Tổng</th>
-                </tr>
+                   <tr class="table_head">
+                <th class="column-1" data-label="Ảnh">Ảnh</th>
+                <th class="column-2" data-label="Sản phẩm">Sản phẩm</th>
+                <th class="column-3" data-label="Giá">Giá</th>
+                <th class="column-4" data-label="Số lượng">Số lượng</th>
+                <th class="column-5" data-label="Tổng">Tổng</th>
+            </tr>
 
-                @foreach($carts as $key => $cart)
-                    @php
-                        $price = $cart->price * $cart->pty;
-                        $total += $price;
-                    @endphp
-                    <tr>
-                        <td class="column-1">
-                            <div class="how-item">
-                                <img src="{{ $cart->product->thumb }}" alt="IMG" style="width: 200px">
-                            </div>
-                        </td>
-                        <td class="column-2">{{ $cart->product->name }}</td>
-                        <td class="column-3">{{ number_format($cart->price, 0, '', '.') }}</td>
-                        <td class="column-4">{{ $cart->pty }}</td>
-                        <td class="column-5">{{ number_format($price, 0, '', '.') }}</td>
-                    </tr>
-                @endforeach
+            @foreach($carts as $key => $cart)
+                @php
+                    $price = $cart->price * $cart->pty;
+                    $total += $price;
+                @endphp
+                <tr>
+                    <td class="column-1" data-label="Ảnh">
+                        <div class="how-item">
+                            <img src="{{ $cart->product->thumb }}" alt="IMG" style="width: 200px">
+                        </div>
+                    </td>
+                    <td class="column-2" data-label="Sản phẩm">{{ $cart->product->name }}</td>
+                    <td class="column-3" data-label="Giá">{{ number_format($cart->price, 0, '', '.') }}</td>
+                    <td class="column-4" data-label="Số lượng">{{ $cart->pty }}</td>
+                    <td class="column-5" data-label="Tổng">{{ number_format($price, 0, '', '.') }}</td>
+                </tr>
+            @endforeach
                     <tr>
                         <td colspan="4" class="text-right">Tổng Tiền</td>
                         <td >{{ number_format($total, 0, '', '.') }}</td>

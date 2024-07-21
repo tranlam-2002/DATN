@@ -37,26 +37,26 @@
                     </form>
                 </div>
             </div>
-            <table class="table">
+            <table class="table order-list">
                 <thead>
                 <tr>
-                    <th style="width: 100px">Mã ĐH</th>
-                    <th>Tên Khách Hàng</th>
-                    <th>Số Điện Thoại</th>
+                    <th>Mã ĐH</th>
+                    <th class="hidden-xs">Tên Khách Hàng</th>
+                    <th class="hidden-xs">Số Điện Thoại</th>
                     <th>Giao Hàng</th>
-                    <th>Thanh Toán</th>
+                    <th class="hidden-xs">Thanh Toán</th>
                     <th>Ngày Đặt hàng</th>
-                    <th style="width: 100px">&nbsp;</th>
+                    <th>&nbsp;</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($customers as $customer)
                     <tr>
                         <td>{{ $customer->id }}</td>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->phone }}</td>
+                        <td class="hidden-xs">{{ $customer->name }}</td>
+                        <td class="hidden-xs">{{ $customer->phone }}</td>
                         <td>{{ $deliveredTexts[$customer->delivered] }}</td>
-                        <td>{{ $paymentMethods[$customer->payment_method] ?? 'N/A' }}</td>
+                        <td class="hidden-xs">{{ $paymentMethods[$customer->payment_method] ?? 'N/A' }}</td>
                         <td>{{ $customer->created_at }}</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="{{ route('orders.show', $customer->id) }}">

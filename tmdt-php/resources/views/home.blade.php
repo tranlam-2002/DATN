@@ -66,6 +66,17 @@
 		</div>
 	</section>
 
+	<!-- Biểu ngữ bật lên -->
+    <div class="banner-popup-container" id="bannerPopup">
+        <div class="banner-content">
+            <a href="javascript:void(0)" class="close-popup" onclick="document.getElementById('bannerPopup').style.display='none';"> 
+                <i class="fa fa-times"></i> 
+            </a>
+            <a href="/promotions" target="_blank">
+                <img src="/template/images/khuyenmai/khuyenmai-5.png" alt="banner popup quảng cáo" style="max-height:400px;">
+            </a>
+        </div>
+    </div>
 
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">

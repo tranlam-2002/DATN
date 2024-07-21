@@ -91,7 +91,7 @@
         font-size: 24px;
     }
     .main-content-wrapper {
-        padding: 20px;
+        padding: 5px;
         box-sizing: border-box;
     }
 
@@ -111,5 +111,81 @@
     .nav-item a.active,
     .nav-item a:hover {
         color: #ff0000; /* Đổi màu biểu tượng khi nhấn vào hoặc di chuột */
+    }
+
+    /* ds đơn hàng  */
+     .order-list .hidden-xs {
+        display: none;
+    }
+    
+    /* Đặt lại width cho các cột còn lại */
+    .table th, .table td {
+        width: auto;
+    }
+
+    .table {
+        font-size: 12px; /* Giảm kích thước font chữ cho mobile */
+    }
+
+    .table .btn {
+        padding: 2px 4px;
+    }
+
+    .table .btn-sm {
+    display: block;
+    margin-bottom: 5px;
+    }
+
+    /* Loại bỏ căn lề hai bên trái và phải */
+    .container, .row {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* CSS cho phần chi tiết đơn hàng ở dạng mobile */
+@media (max-width: 767px) {
+    .order-detail .table {
+        width: 100%; /* Đảm bảo bảng chiếm toàn bộ chiều rộng */
+        border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
+    }
+
+    .order-detail .table th, .order-detail .table td {
+        display: block; /* Hiển thị các ô bảng theo hàng dọc */
+        width: 100%; /* Đảm bảo mỗi ô chiếm toàn bộ chiều rộng */
+        box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
+    }
+
+    .order-detail .table th {
+        display: none; /* Ẩn tiêu đề cột */
+    }
+
+    .order-detail .table td {
+        display: flex;
+        justify-content: space-between; /* Căn giữa tên và giá trị */
+        padding: 10px; /* Padding để tạo khoảng cách */
+        border-bottom: 1px solid #ddd; /* Đường viền dưới mỗi ô bảng */
+    }
+
+    .order-detail .table td:before {
+        content: attr(data-label); /* Hiển thị tên cột như là nhãn */
+        font-weight: bold; /* Làm đậm nhãn */
+        flex: 1; /* Chiếm một phần chiều rộng */
+    }
+
+    /* Định dạng ảnh sản phẩm */
+    .order-detail .table .column-1 img {
+        width: 100px; /* Đặt kích thước ảnh sản phẩm phù hợp với màn hình nhỏ */
+        height: auto; /* Đảm bảo tỷ lệ ảnh không bị thay đổi */
+    }
+
+    /* Cấu trúc cho các nút bấm */
+    .order-detail .btn {
+        width: 100%; /* Đảm bảo nút bấm chiếm toàn bộ chiều rộng */
+        text-align: center; /* Căn giữa nội dung trong nút */
+        padding: 10px; /* Padding để tạo khoảng cách */
+        box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
     }
 }
