@@ -41,6 +41,7 @@ class CartController extends Controller
 
         return redirect('/carts');
     }
+    // đặt hàng
     public function addCart(Request $request){
         $this -> cartService -> addCart($request);
         

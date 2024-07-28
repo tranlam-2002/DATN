@@ -83,6 +83,7 @@ class CartService
         Session::put('carts', $carts);
         return true;
     }
+    // Phần đặt hàng
     public function addCart($request){
         try {
             DB::beginTransaction();
@@ -148,7 +149,7 @@ class CartService
         return true;
     }
 
-
+    // Phần thanh toán 
     public function VNPayUrl(Request $request, $customer)
     {
         date_default_timezone_set('Asia/Ho_Chi_Minh');

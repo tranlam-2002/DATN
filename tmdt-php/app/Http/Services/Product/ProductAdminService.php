@@ -10,7 +10,7 @@ class ProductAdminService{
     public function getMenu(){
         return Menu::where("active", 1)->get();
     }
-    
+    // kiểm tra tính hợp lệ của giá sản phẩm
     public function isValidPrice($request){
         if($request->input('price') != 0 && $request->input('price_sale') != 0
         && $request->input('price_sale') >= $request->input('price')
@@ -25,6 +25,8 @@ class ProductAdminService{
         }
         return true;
     }
+    // tạo một sản phẩm mới
+    // đầu tiên kiểm tra tính hợp lệ của giá sản phẩm
     public function create($request){
         $isValidPrice = $this->isValidPrice($request);
         if($isValidPrice == false) return false;
@@ -40,11 +42,13 @@ class ProductAdminService{
         }
         return true;
     }
-    
+    // danh sách sản phẩm
     public function get(){
         return Product::with('menu')
         ->orderByDesc('id')->paginate(15);
     }
+    // cập nhật sản phẩm
+    // kiểm tra giá hợp lệ của sản phẩm
     public function update($request, $product){
           $isValidPrice = $this->isValidPrice($request);
          if($isValidPrice == false) return false;
@@ -62,6 +66,7 @@ class ProductAdminService{
         }
         return true;
     }
+    // xóa sản phẩm
        public function delete($request){
         $product = Product::where('id', $request->input('id'))->first();
         if($product){
